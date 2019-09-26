@@ -106,19 +106,13 @@ static const wiced_ssid_t ap_ssid =
     .value  = AP_SSID,
 };
 
-/******************************************************
- *               功能定义
- ******************************************************/
 
-/**
- * Main Ping app
- *
- * 初始化Wiced，加入无线网络，然后一直ping指定的IP地址。
- */
-
-static void app_main( void )
+/*
+配置wifi lwip信息
+*/
+void Config_WIFI_LwIP_Info()
 {
-    ip4_addr_t ipaddr, netmask, gw;
+		ip4_addr_t ipaddr, netmask, gw;
     ip4_addr_t target;
     int socket_hnd;
     wwd_time_t send_time;
@@ -179,8 +173,7 @@ static void app_main( void )
     }
 
     WPRINT_APP_INFO( ( "Network ready IP: %s\n", ip4addr_ntoa(netif_ip4_addr(&wiced_if))));
-
-    /*打开本地套接字进行ping */
+		    /*打开本地套接字进行ping */
     if ( ( socket_hnd = lwip_socket( AF_INET, SOCK_RAW, IP_PROTO_ICMP ) ) < 0 )
     {
         WPRINT_APP_ERROR(( "unable to create socket for Ping\n" ));
@@ -199,37 +192,53 @@ static void app_main( void )
 //    WPRINT_APP_INFO(("Pinging: %s\n", ip4addr_ntoa( &target )));
 		netio_init();
 		
+}
+/******************************************************
+ *               功能定义
+ ******************************************************/
+
+/**
+ * Main Ping app
+ *
+ * 初始化Wiced，加入无线网络，然后一直ping指定的IP地址。
+ */
+
+static void app_main( void )
+{
+   
+		Config_WIFI_LwIP_Info();
+		
     /* Loop forever */
     while ( 1 )
     {
-//        err_t result;
+        err_t result;
+#if 0
+        /* 发送ping*/
+        if ( ping_send( socket_hnd, &target ) != ERR_OK )
+        {
+            WPRINT_APP_ERROR(( "Unable to send Ping\n" ));
+            return;
+        }
 
-//        /* Send a ping */
-//        if ( ping_send( socket_hnd, &target ) != ERR_OK )
-//        {
-//            WPRINT_APP_ERROR(( "Unable to send Ping\n" ));
-//            return;
-//        }
+        /* 记录时间ping已发送 */
+        send_time = host_rtos_get_time( );
 
-//        /* Record time ping was sent */
-//        send_time = host_rtos_get_time( );
-
-//        /* Wait for ping reply */
-//        result = ping_recv( socket_hnd );
-//        if ( ERR_OK == result )
-//        {
-//            WPRINT_APP_INFO(("Ping Reply %dms\n", (int)( host_rtos_get_time( ) - send_time ) ));
-//        }
-//        else
-//        {
-//            WPRINT_APP_INFO(("Ping timeout\n"));
-//        }
-
-        /* Sleep until time for next ping */
+        /* 等待ping回复 */
+        result = ping_recv( socket_hnd );
+        if ( ERR_OK == result )
+        {
+            WPRINT_APP_INFO(("Pinginging Reply %dms\n", (int)( host_rtos_get_time( ) - send_time ) ));
+        }
+        else
+        {
+            WPRINT_APP_INFO(("Ping timeout\n"));
+        }
+#endif 
+        /*等待直到下一次ping的时间 */
         sys_msleep( PING_DELAY );
     }
 
-    /* Shutdown code - not used due to infinite loop */
+    /* 关机代码-由于无限循环而未使用 */
 #if 0
     WPRINT_APP_INFO(("Closing down\n"));
     lwip_close( socket_hnd );
@@ -384,8 +393,6 @@ int main( void )
     BOARD_InitDebugConsole();
     /* 初始化LED */
     LED_GPIO_Config();
-    /* 初始化以太网模块时钟 */
-    //BOARD_InitModuleClock();
     /* 设置SDIO中断优先级 */
     NVIC_SetPriority(USDHC2_IRQn, 5U);
 
