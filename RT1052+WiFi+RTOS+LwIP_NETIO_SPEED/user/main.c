@@ -63,7 +63,7 @@
 /******************************************************
  *                    配置
  ******************************************************/
-#define AP_SSID              "embedfire_dev"    /* 路由名称 */
+#define AP_SSID              "embedfire_AP6181"    /* 路由名称 */
 #define AP_PASS              "wildfire"         /* 路由密码 */
 #define AP_SEC               WICED_SECURITY_WPA2_MIXED_PSK  /* 路由加密 */
 
@@ -80,6 +80,12 @@
 #define PING_DATA_SIZE       (32)      /** ping 其他数据大小*/
 #define JOIN_TIMEOUT         (10000)   /** 加入无线网络的超时时间（以毫秒为单位）= 10秒*/
 #define APP_THREAD_STACKSIZE (5120)
+
+    union
+    {
+
+    } data;
+
 
 /******************************************************
  *               静态函数声明
