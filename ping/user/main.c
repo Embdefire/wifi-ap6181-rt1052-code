@@ -17,16 +17,17 @@
 /*******************************************************************************
  * Includes
  ******************************************************************************/
-#include "lwip/opt.h"
-#include "lwip/icmp.h"
-#include "lwip/inet_chksum.h"
-#include "lwip/sockets.h"
-#include "lwip/mem.h"
-#include "lwip/inet.h"
-#include "netif/etharp.h"
-#include "lwip/tcpip.h"
-#include "lwip/dhcp.h"
-#include "lwip/prot/dhcp.h"
+//#include "lwip/opt.h"
+//#include "lwip/icmp.h"
+//#include "lwip/inet_chksum.h"
+//#include "lwip/sockets.h"
+//#include "lwip/mem.h"
+//#include "lwip/inet.h"
+//#include "netif/etharp.h"
+//#include "lwip/tcpip.h"
+//#include "lwip/dhcp.h"
+//#include "lwip/prot/dhcp.h"
+
 #include "wwd_network.h"
 #include "wwd_management.h"
 #include "wwd_wifi.h"

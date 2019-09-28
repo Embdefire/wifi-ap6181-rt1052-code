@@ -115,7 +115,7 @@
 #include "netif/etharp.h"
 #include "wwd_bus_protocol.h"
 
-/* Define those to better describe your network interface. */
+/* 定义它们以更好地描述您的网络接口。 */
 #define IFNAME0 'w'
 #define IFNAME1 'l'
 
@@ -134,38 +134,37 @@ static err_t lwip_igmp_mac_filter(struct netif *netif,
        const ip4_addr_t *group, enum netif_mac_filter_action action);
 #endif
 
-/* Ethertype packet filtering support. */
+/* 以太网类型的数据包过滤支持。 */
 static uint16_t filter_ethertype;
 static wwd_interface_t filter_interface;
 static wwd_network_filter_ethernet_packet_t filter_ethernet_packet_callback;
 static void* filter_userdata;
 
 /**
- * In this function, the hardware should be initialized.
+ *在此功能中，应初始化硬件。
  * Called from ethernetif_init().
  *
- * @param netif the already initialized lwip network interface structure
- *        for this ethernetif
+ * @param netif此ethernetif的已初始化lwip网络接口结构
  */
 static void low_level_init( /*@partial@*/ struct netif *netif )
 {
-    /* Set MAC hardware address length */
+    /*设置MAC硬件地址长度 */
     netif->hwaddr_len = (u8_t) ETHARP_HWADDR_LEN;
 
-    /* Setup the physical address of this IP instance. */
+    /*设置此IP实例的物理地址。 */
     if ( wwd_wifi_get_mac_address( (wiced_mac_t*) ( netif->hwaddr ), (wwd_interface_t) netif->state ) != WWD_SUCCESS )
     {
         WPRINT_NETWORK_DEBUG(("Couldn't get MAC address\n"));
         return;
     }
 
-    /* Set Maximum Transfer Unit */
+    /*设置最大传输单位 */
     netif->mtu = (u16_t) WICED_PAYLOAD_MTU;
 
-    /* Set device capabilities. Don't set NETIF_FLAG_ETHARP if this device is not an ethernet one */
+    /* 设置设备功能。 如果此设备不是以太网设备，请不要设置NETIF_FLAG_ETHARP*/
     netif->flags = (u8_t) ( NETIF_FLAG_BROADCAST | NETIF_FLAG_ETHARP | NETIF_FLAG_LINK_UP );
 
-    /* Do whatever else is needed to initialize interface. */
+    /* 执行初始化接口所需的其他任何操作。 */
 #if LWIP_IGMP
     netif->flags |= NETIF_FLAG_IGMP;
     netif_set_igmp_mac_filter(netif, lwip_igmp_mac_filter);
@@ -173,14 +172,12 @@ static void low_level_init( /*@partial@*/ struct netif *netif )
 }
 
 /**
- * This function should do the actual transmission of the packet. The packet is
- * contained in the pbuf that is passed to the function. This pbuf
- * might be chained.
+*	此功能应完成数据包的实际传输。 
+	数据包包含在传递给函数的pbuf中。 此pbuf可能已被链接。
  *
- * @param netif the lwip network interface structure for this ethernetif
- * @param p the MAC packet to send (e.g. IP packet including MAC addresses and type)
- * @return ERR_OK if the packet could be sent
- *         an err_t value if the packet couldn't be sent
+ * @param netif此ethernetif的lwip网络接口结构
+ * @paramp	要发送的MAC数据包（例如包含MAC地址和类型的IP数据包）
+ * @return ERR_OK如果可以发送数据包，则为err_t值，如果不能发送数据包
  *
  * @note Returning ERR_MEM here if a DMA queue of your MAC is full can lead to
  *       strange results. You might consider waiting for space in the DMA queue
@@ -215,13 +212,13 @@ static err_t low_level_output( struct netif *netif, /*@only@*/ struct pbuf *p )
 }
 
 /**
- * This function should be called when a packet is ready to be read
- * from the interface. It uses the function low_level_input() that
- * should handle the actual reception of bytes from the network
- * interface. Then the type of the received packet is determined and
- * the appropriate input function is called.
+ * 当准备读取数据包时应调用此函数
+ * 来自界面。 它使用函数low_level_input（）
+ * 应该处理来自网络的实际字节接收
+ * 界面。 然后确定接收到的数据包的类型，并
+ * 调用适当的输入函数。
  *
- * @param p : the incoming ethernet packet
+ * @param p : 传入的网络的数据包
  */
 void host_network_process_ethernet_data( /*@only@*/ wiced_buffer_t buffer, wwd_interface_t interface )
 {
@@ -233,7 +230,7 @@ void host_network_process_ethernet_data( /*@only@*/ wiced_buffer_t buffer, wwd_i
     if ( buffer == NULL )
         return;
 
-    /* points to packet payload, which starts with an Ethernet header */
+    /* 指向以以太网报头开头的数据包有效负载 */
     ethernet_header = (struct eth_hdr *) buffer->payload;
 
     ethertype = htons( ethernet_header->type );
@@ -243,7 +240,7 @@ void host_network_process_ethernet_data( /*@only@*/ wiced_buffer_t buffer, wwd_i
         filter_ethernet_packet_callback(buffer->payload, filter_userdata);
     }
 
-    /* Check if this is an 802.1Q VLAN tagged packet */
+    /*检查这是否是802.1Q VLAN标记的数据包 */
     if ( ethertype == WICED_ETHERTYPE_8021Q )
     {
         /* Need to remove the 4 octet VLAN Tag, by moving src and dest addresses 4 octets to the right,
@@ -283,14 +280,14 @@ void host_network_process_ethernet_data( /*@only@*/ wiced_buffer_t buffer, wwd_i
 
             if ( tmp_netif == NULL )
             {
-                /* Received a packet for a network interface is not initialised Cannot do anything with packet - just drop it. */
+                /* 收到的网络接口数据包未初始化无法对数据包执行任何操作-丢弃它. */
                 result = pbuf_free( buffer );
                 LWIP_ASSERT("Failed to release packet buffer", ( result != (u8_t)0 ) );
                 buffer = NULL;
                 return;
             }
 
-            /* Send to packet to tcpip_thread to process */
+            /* 发送到数据包到tcpip_thread进行处理 */
             if ( tcpip_input( buffer, tmp_netif ) != ERR_OK )
             {
                 LWIP_DEBUGF(NETIF_DEBUG, ("ethernetif_input: IP input error\n"));
@@ -325,16 +322,15 @@ void host_network_set_ethertype_filter( uint16_t ethertype, wwd_interface_t inte
 }
 
 /**
- * Should be called at the beginning of the program to set up the
- * network interface. It calls the function low_level_init() to do the
- * actual setup of the hardware.
+ * 应在程序开始时调用以设置
+ * 网络接口。它调用函数low_level_init（）来执行
+ * 硬件的实际设置。
  *
- * This function should be passed as a parameter to netif_add().
+ * 该函数应作为参数传递给netif_add（）。
  *
- * @param netif the lwip network interface structure for this ethernetif
- * @return ERR_OK if the loopif is initialized
- *         ERR_MEM if private data couldn't be allocated
- *         any other err_t on error
+ * @param  netif此ethernetif的lwip网络接口结构
+ * @return ERR_OK，如果循环初始化
+ *         ERR_MEM，如果在出错时无法为私有数据分配任何其他err_t
  */
 err_t ethernetif_init( /*@partial@*/ struct netif *netif )
 {
@@ -347,9 +343,8 @@ err_t ethernetif_init( /*@partial@*/ struct netif *netif )
     }
 
     /*
-     * Initialize the snmp variables and counters inside the struct netif.
-     * The last argument should be replaced with your link speed, in units
-     * of bits per second.
+				在结构netif中初始化snmp变量和计数器。 
+				最后一个参数应替换为链接速度，以每秒位数为单位。
      */
     NETIF_INIT_SNMP(netif, snmp_ifType_ethernet_csmacd, LINK_SPEED_OF_YOUR_NETIF_IN_BPS);
 
@@ -367,7 +362,7 @@ err_t ethernetif_init( /*@partial@*/ struct netif *netif )
 #endif
     netif->linkoutput = low_level_output;
 
-    /* Initialize the hardware */
+    /* 初始化硬件 */
     low_level_init( netif );
 
     return ERR_OK;
@@ -375,7 +370,7 @@ err_t ethernetif_init( /*@partial@*/ struct netif *netif )
 
 #if LWIP_IGMP
 /**
- * Interface between LwIP IGMP MAC filter and WICED MAC filter
+ *LwIP IGMP MAC过滤器和WICED MAC过滤器之间的接口
  */
 static err_t lwip_igmp_mac_filter(struct netif *netif,
        const ip4_addr_t *group, enum netif_mac_filter_action action)

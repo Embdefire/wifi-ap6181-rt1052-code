@@ -1,10 +1,22 @@
 #include "ping.h"
+
 ip4_addr_t target;
 int socket_hnd;
 wwd_time_t send_time;
 static uint16_t     ping_seq_num;
 extern void netio_init(void);
+ip4_addr_t ipaddr, netmask, gw;
 
+#include "ping.h"
+#include "lwip/timeouts.h"
+#include "lwip/init.h"
+#include "lwip/tcpip.h"
+#include "netif/ethernet.h"
+//#include "ethernetif.h"
+#include "sys_arch.h"
+#include "lwip/timeouts.h"
+
+#include "netif/ethernet.h"
 /**
  *  准备回显ICMP请求数据包的内容
  *
@@ -114,8 +126,6 @@ err_t ping_recv( int socket_hnd )
 */
 void Config_WIFI_LwIP_Info()
 {
-		ip4_addr_t ipaddr, netmask, gw;
-
     int recv_timeout = PING_RCV_TIMEOUT;
     wwd_result_t result;
 
@@ -128,7 +138,6 @@ void Config_WIFI_LwIP_Info()
     {
         WPRINT_APP_INFO(("Error %d while starting WICED!\n", result));
     }
-
     /*尝试加入Wi-Fi网络 */
     WPRINT_APP_INFO(("Joining : " AP_SSID "\n"));
     while ( wwd_wifi_join( &ap_ssid, AP_SEC, (uint8_t*) AP_PASS, sizeof( AP_PASS ) - 1, NULL, WWD_STA_INTERFACE ) != WWD_SUCCESS )
@@ -171,26 +180,25 @@ void Config_WIFI_LwIP_Info()
             sys_msleep( 10 );
         }
     }
-
+		
     WPRINT_APP_INFO( ( "Network ready IP: %s\n", ip4addr_ntoa(netif_ip4_addr(&wiced_if))));
-		    /*打开本地套接字进行ping */
-    if ( ( socket_hnd = lwip_socket( AF_INET, SOCK_RAW, IP_PROTO_ICMP ) ) < 0 )
-    {
-        WPRINT_APP_ERROR(( "unable to create socket for Ping\n" ));
-        return;
-    }
+		
+//		    /*打开本地套接字进行ping */
+//    if ( ( socket_hnd = lwip_socket( AF_INET, SOCK_RAW, IP_PROTO_ICMP ) ) < 0 )
+//    {
+//        WPRINT_APP_ERROR(( "unable to create socket for Ping\n" ));
+//        return;
+//    }
+//    /* 在本地套接字上设置接收超时，以便ping会超时. */
+//    lwip_setsockopt( socket_hnd, SOL_SOCKET, SO_RCVTIMEO, &recv_timeout, sizeof( recv_timeout ) );
+//#ifdef PING_TARGET
+//        target.addr = htonl( PING_TARGET );
+//#else /* ifdef PING_TARGET */
+//        target.addr = netif_ip4_gw(&wiced_if)->addr;
+//#endif /* ifdef PING_TARGET */
 
-    /* 在本地套接字上设置接收超时，以便ping会超时. */
-    lwip_setsockopt( socket_hnd, SOL_SOCKET, SO_RCVTIMEO, &recv_timeout, sizeof( recv_timeout ) );
-
-#ifdef PING_TARGET
-        target.addr = htonl( PING_TARGET );
-#else /* ifdef PING_TARGET */
-        target.addr = netif_ip4_gw(&wiced_if)->addr;
-#endif /* ifdef PING_TARGET */
-
-//    WPRINT_APP_INFO(("Pinging: %s\n", ip4addr_ntoa( &target )));
-		netio_init();
+//   WPRINT_APP_INFO(("Pinging: %s\n", ip4addr_ntoa( &target )));
+//		netio_init();
 		
 
 }
@@ -201,13 +209,15 @@ void Config_WIFI_LwIP_Info()
  */
 void app_main( void )
 {
-#define PING_SW 1
+#define PING_SW 0
 		/*配置wifi lwip信息*/
 		Config_WIFI_LwIP_Info();
-		
+		client_init();
+	
     while ( 1 )
     {
         err_t result;
+
 #if PING_SW
         /* 发送ping*/
         if ( ping_send( socket_hnd, &target ) != ERR_OK )

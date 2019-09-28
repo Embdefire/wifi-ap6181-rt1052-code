@@ -403,7 +403,8 @@ sys_now(void)
  * thread() function. The id of the new thread is returned. Both the id and
  * the priority are system dependent.
  */
-/*@null@*/ sys_thread_t sys_thread_new( const char *name, lwip_thread_fn thread, void *arg, int stacksize, int prio )
+/*@null@*/ 
+sys_thread_t sys_thread_new( const char *name, lwip_thread_fn thread, void *arg, int stacksize, int prio )
 {
     signed portBASE_TYPE result;
     sys_thread_t thread_out;
