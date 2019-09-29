@@ -502,29 +502,14 @@
               <FilePath>..\..\user\board.c</FilePath>
             </File>
             <File>
-              <FileName>board.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\user\board.h</FilePath>
-            </File>
-            <File>
               <FileName>clock_config.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\clock_config.c</FilePath>
             </File>
             <File>
-              <FileName>clock_config.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\user\clock_config.h</FilePath>
-            </File>
-            <File>
               <FileName>pin_mux.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\pin_mux.c</FilePath>
-            </File>
-            <File>
-              <FileName>pin_mux.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\user\pin_mux.h</FilePath>
             </File>
             <File>
               <FileName>fsl_phy.c</FileName>
@@ -2240,29 +2225,14 @@
               <FilePath>..\..\user\board.c</FilePath>
             </File>
             <File>
-              <FileName>board.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\user\board.h</FilePath>
-            </File>
-            <File>
               <FileName>clock_config.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\clock_config.c</FilePath>
             </File>
             <File>
-              <FileName>clock_config.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\user\clock_config.h</FilePath>
-            </File>
-            <File>
               <FileName>pin_mux.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\pin_mux.c</FilePath>
-            </File>
-            <File>
-              <FileName>pin_mux.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\user\pin_mux.h</FilePath>
             </File>
             <File>
               <FileName>fsl_phy.c</FileName>
