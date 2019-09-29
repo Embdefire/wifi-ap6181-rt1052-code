@@ -49,7 +49,8 @@
 #include "wwd_assert.h"
 #include "wwd_buffer_interface.h"
 #include "besl_host_interface.h"
-#include "internal/wiced_internal_api.h"
+//#include "internal/wiced_internal_api.h"
+#include "wiced_internal_api.h"
 #include "wiced_udpip_dtls_api.h"
 
 #include "wiced_network.h"
@@ -168,46 +169,46 @@ wiced_result_t wiced_dtls_init_identity( wiced_dtls_identity_t* identity, wiced_
 {
     wiced_result_t result;
 
-    memset( identity, 0, sizeof( *identity ) );
+//    memset( identity, 0, sizeof( *identity ) );
 
-    if ( type == WICED_DTLS_SECURITY_TYPE_PSK )
-    {
-        wiced_dtls_psk_info_t* psk_info = (wiced_dtls_psk_info_t*) data;
+//    if ( type == WICED_DTLS_SECURITY_TYPE_PSK )
+//    {
+//        wiced_dtls_psk_info_t* psk_info = (wiced_dtls_psk_info_t*) data;
 
-        linked_list_init( &identity->psk_key.psk_identity_list );
-        if ( ( result = wiced_dtls_add_psk_identity( identity, psk_info ) ) != WICED_SUCCESS )
-        {
-            linked_list_deinit( &identity->psk_key.psk_identity_list );
-            return WICED_ERROR;
-        }
-    }
-    else if ( type == WICED_DTLS_SECURITY_TYPE_NONPSK )
-    {
-        wiced_dtls_nonpsk_info_t* cert_info = (wiced_dtls_nonpsk_info_t*) data;
+//        linked_list_init( &identity->psk_key.psk_identity_list );
+//        if ( ( result = wiced_dtls_add_psk_identity( identity, psk_info ) ) != WICED_SUCCESS )
+//        {
+//            linked_list_deinit( &identity->psk_key.psk_identity_list );
+//            return WICED_ERROR;
+//        }
+//    }
+//    else if ( type == WICED_DTLS_SECURITY_TYPE_NONPSK )
+//    {
+//        wiced_dtls_nonpsk_info_t* cert_info = (wiced_dtls_nonpsk_info_t*) data;
 
-        wiced_assert( "Bad args", (identity != NULL) && (cert_info->private_key != NULL) && (cert_info->certificate_data != NULL) );
+//        wiced_assert( "Bad args", (identity != NULL) && (cert_info->private_key != NULL) && (cert_info->certificate_data != NULL) );
 
-        mbedtls_x509_crt_init( &identity->certificate );
-        result = mbedtls_x509_crt_parse( &identity->certificate, (const unsigned char *) cert_info->certificate_data, cert_info->certificate_length );
-        if ( result != WICED_SUCCESS )
-        {
-            mbedtls_x509_crt_free( &identity->certificate );
-            return WICED_ERROR;
-        }
+//        mbedtls_x509_crt_init( &identity->certificate );
+//        result = mbedtls_x509_crt_parse( &identity->certificate, (const unsigned char *) cert_info->certificate_data, cert_info->certificate_length );
+//        if ( result != WICED_SUCCESS )
+//        {
+//            mbedtls_x509_crt_free( &identity->certificate );
+//            return WICED_ERROR;
+//        }
 
-        mbedtls_pk_init( &identity->private_key );
-        result = mbedtls_pk_parse_key( &identity->private_key, (const unsigned char *) cert_info->private_key, cert_info->key_length, NULL, 0 );
-        if ( result != WICED_SUCCESS )
-        {
-            mbedtls_pk_free( &identity->private_key );
-            mbedtls_x509_crt_free( &identity->certificate );
-            return WICED_ERROR;
-        }
-    }
-    else
-    {
-        return WICED_ERROR;
-    }
+//        mbedtls_pk_init( &identity->private_key );
+//        result = mbedtls_pk_parse_key( &identity->private_key, (const unsigned char *) cert_info->private_key, cert_info->key_length, NULL, 0 );
+//        if ( result != WICED_SUCCESS )
+//        {
+//            mbedtls_pk_free( &identity->private_key );
+//            mbedtls_x509_crt_free( &identity->certificate );
+//            return WICED_ERROR;
+//        }
+//    }
+//    else
+//    {
+//        return WICED_ERROR;
+//    }
 
     return WICED_SUCCESS;
 }
@@ -215,12 +216,12 @@ wiced_result_t wiced_dtls_init_identity( wiced_dtls_identity_t* identity, wiced_
 wiced_result_t wiced_dtls_add_psk_identity( wiced_dtls_identity_t* identity, wiced_dtls_psk_info_t* psk_identity )
 {
     wiced_result_t result;
-    result = linked_list_insert_node_at_rear( &identity->psk_key.psk_identity_list, &psk_identity->this_node );
-    if ( result != WICED_SUCCESS )
-    {
-        WPRINT_SECURITY_ERROR(("Error in adding PSK identity-key pair in list\n"));
-        return result;
-    }
+//    result = linked_list_insert_node_at_rear( &identity->psk_key.psk_identity_list, &psk_identity->this_node );
+//    if ( result != WICED_SUCCESS )
+//    {
+//        WPRINT_SECURITY_ERROR(("Error in adding PSK identity-key pair in list\n"));
+//        return result;
+//    }
 
     return WICED_SUCCESS;
 }
@@ -230,16 +231,16 @@ wiced_result_t wiced_dtls_remove_psk_identity( wiced_dtls_identity_t* identity, 
     wiced_result_t result;
     wiced_dtls_psk_info_t* current_identity;
 
-    /* Check if psk_identity is already present in list, If present then only try to remove identity from list */
-    if ( linked_list_find_node( &identity->psk_key.psk_identity_list, dtls_find_psk_identity, (wiced_dtls_psk_info_t*) psk_identity, (linked_list_node_t**)&current_identity ) == WICED_SUCCESS )
-    {
-        result = linked_list_remove_node ( &identity->psk_key.psk_identity_list, &psk_identity->this_node );
-        if ( result != WICED_SUCCESS )
-        {
-            WPRINT_SECURITY_ERROR(("Error in removing PSK identity-key pair from list\n"));
-            return result;
-        }
-    }
+//    /* Check if psk_identity is already present in list, If present then only try to remove identity from list */
+//    if ( linked_list_find_node( &identity->psk_key.psk_identity_list, dtls_find_psk_identity, (wiced_dtls_psk_info_t*) psk_identity, (linked_list_node_t**)&current_identity ) == WICED_SUCCESS )
+//    {
+//        result = linked_list_remove_node ( &identity->psk_key.psk_identity_list, &psk_identity->this_node );
+//        if ( result != WICED_SUCCESS )
+//        {
+//            WPRINT_SECURITY_ERROR(("Error in removing PSK identity-key pair from list\n"));
+//            return result;
+//        }
+//    }
 
     return WICED_SUCCESS;
 }
@@ -247,19 +248,19 @@ wiced_result_t wiced_dtls_remove_psk_identity( wiced_dtls_identity_t* identity, 
 wiced_result_t wiced_dtls_deinit_identity( wiced_dtls_identity_t* identity, wiced_dtls_security_type_t type )
 {
 
-    if ( type == WICED_DTLS_SECURITY_TYPE_PSK )
-    {
-        /* handle cleanup for PSK */
-    }
-    else if ( type == WICED_DTLS_SECURITY_TYPE_NONPSK )
-    {
-        mbedtls_x509_crt_free( &identity->certificate );
-        mbedtls_pk_free( &identity->private_key );
-    }
-    else
-    {
-        return WICED_ERROR;
-    }
+//    if ( type == WICED_DTLS_SECURITY_TYPE_PSK )
+//    {
+//        /* handle cleanup for PSK */
+//    }
+//    else if ( type == WICED_DTLS_SECURITY_TYPE_NONPSK )
+//    {
+//        mbedtls_x509_crt_free( &identity->certificate );
+//        mbedtls_pk_free( &identity->private_key );
+//    }
+//    else
+//    {
+//        return WICED_ERROR;
+//    }
 
     return WICED_SUCCESS;
 }
@@ -351,128 +352,128 @@ static wiced_result_t dtls_receive_callback( wiced_udp_socket_t* socket, void *a
 wiced_result_t wiced_generic_start_dtls_with_ciphers( wiced_dtls_context_t* dtls_context, void* socket, wiced_ip_address_t ip, wiced_dtls_endpoint_type_t type, wiced_dtls_certificate_verification_t verification, const cipher_suite_t* cipher_list[ ], dtls_transport_protocol_t transport_protocol )
 {
     wiced_result_t  result;
-    int ret = 0;
+//    int ret = 0;
 
-    mbedtls_ssl_init( &ssl );
-    memset( &dtls_context->context, 0, sizeof(wiced_dtls_workspace_t) );
+//    mbedtls_ssl_init( &ssl );
+//    memset( &dtls_context->context, 0, sizeof(wiced_dtls_workspace_t) );
 
-    ssl.transport_protocol = TLS_UDP_TRANSPORT;
-    ssl.receive_context = socket;
+//    ssl.transport_protocol = TLS_UDP_TRANSPORT;
+//    ssl.receive_context = socket;
 
-    /* initialize linked list for retransmission and peer list */
-    linked_list_init (&dtls_context->context.peer_list);
+//    /* initialize linked list for retransmission and peer list */
+//    linked_list_init (&dtls_context->context.peer_list);
 
-    if ( ( result = wiced_rtos_init_queue( (wiced_queue_t*)&dtls_event_queue, NULL, sizeof(dtls_event_message_t), DTLS_EVENT_QUEUE_DEPTH ) != WICED_SUCCESS ) )
-    {
-        goto ERROR_QUEUE_INIT;
-    }
+//    if ( ( result = wiced_rtos_init_queue( (wiced_queue_t*)&dtls_event_queue, NULL, sizeof(dtls_event_message_t), DTLS_EVENT_QUEUE_DEPTH ) != WICED_SUCCESS ) )
+//    {
+//        goto ERROR_QUEUE_INIT;
+//    }
 
-    dtls_context->event_queue = &dtls_event_queue;
+//    dtls_context->event_queue = &dtls_event_queue;
 
-    if ( ( result = wiced_rtos_create_thread( (wiced_thread_t*)&dtls_thread, DTLS_THREAD_PRIORITY, "DTLS server", dtls_event_thread, DTLS_THREAD_STACK_SIZE, socket ) ) != WICED_SUCCESS )
-    {
-        WPRINT_SECURITY_ERROR(("Error in creation of DTLS thread\n"));
-        goto ERROR_CREATE_THREAD;
-    }
+//    if ( ( result = wiced_rtos_create_thread( (wiced_thread_t*)&dtls_thread, DTLS_THREAD_PRIORITY, "DTLS server", dtls_event_thread, DTLS_THREAD_STACK_SIZE, socket ) ) != WICED_SUCCESS )
+//    {
+//        WPRINT_SECURITY_ERROR(("Error in creation of DTLS thread\n"));
+//        goto ERROR_CREATE_THREAD;
+//    }
 
-    dtls_context->event_thread = &dtls_thread;
+//    dtls_context->event_thread = &dtls_thread;
 
-    if ( ( result = wiced_udp_register_callbacks( (wiced_udp_socket_t*)socket, dtls_receive_callback, dtls_context->callback_arg ) ) != WICED_SUCCESS )
-    {
-        WPRINT_SECURITY_ERROR(("Error in registering udp callback\n"));
-        goto ERROR_REGISTER_CALLBACK;
-    }
+//    if ( ( result = wiced_udp_register_callbacks( (wiced_udp_socket_t*)socket, dtls_receive_callback, dtls_context->callback_arg ) ) != WICED_SUCCESS )
+//    {
+//        WPRINT_SECURITY_ERROR(("Error in registering udp callback\n"));
+//        goto ERROR_REGISTER_CALLBACK;
+//    }
 
-    if ( ( result = wiced_rtos_register_timed_event( (wiced_timed_event_t*)&dtls_timed_event, WICED_NETWORKING_WORKER_THREAD, dtls_timed_event_callback, DTLS_TIMED_EVENT_TIMER_INTERVAL, socket ) ) != WICED_SUCCESS )
-    {
-        WPRINT_SECURITY_ERROR(("Error in registration of timed event \n"));
-        goto ERROR_TIMED_EVENT;
-    }
+//    if ( ( result = wiced_rtos_register_timed_event( (wiced_timed_event_t*)&dtls_timed_event, WICED_NETWORKING_WORKER_THREAD, dtls_timed_event_callback, DTLS_TIMED_EVENT_TIMER_INTERVAL, socket ) ) != WICED_SUCCESS )
+//    {
+//        WPRINT_SECURITY_ERROR(("Error in registration of timed event \n"));
+//        goto ERROR_TIMED_EVENT;
+//    }
 
-    dtls_context->context.timer_event = &dtls_timed_event;
+//    dtls_context->context.timer_event = &dtls_timed_event;
 
-    mbedtls_ssl_cookie_init( &cookie_ctx );
-    mbedtls_ctr_drbg_init( &ctr_drbg );
-    mbedtls_ssl_config_init( &conf );
+//    mbedtls_ssl_cookie_init( &cookie_ctx );
+//    mbedtls_ctr_drbg_init( &ctr_drbg );
+//    mbedtls_ssl_config_init( &conf );
 
-    /* seeding entropy for random number generation */
-    mbedtls_entropy_init( &entropy );
-    if( ( ret = mbedtls_ctr_drbg_seed( &ctr_drbg, mbedtls_entropy_func, &entropy, NULL, 0) ) != 0 )
-    {
-        WPRINT_SECURITY_ERROR(( " failed\n  ! mbedtls_ctr_drbg_seed returned %d\n", ret ));
-        result = DTLS_ERROR;
-        goto ERROR_CLEANUP_EXIT;
-    }
+//    /* seeding entropy for random number generation */
+//    mbedtls_entropy_init( &entropy );
+//    if( ( ret = mbedtls_ctr_drbg_seed( &ctr_drbg, mbedtls_entropy_func, &entropy, NULL, 0) ) != 0 )
+//    {
+//        WPRINT_SECURITY_ERROR(( " failed\n  ! mbedtls_ctr_drbg_seed returned %d\n", ret ));
+//        result = DTLS_ERROR;
+//        goto ERROR_CLEANUP_EXIT;
+//    }
 
-    if( ( ret = mbedtls_ssl_config_defaults( &conf, MBEDTLS_SSL_IS_SERVER, MBEDTLS_SSL_TRANSPORT_DATAGRAM, MBEDTLS_SSL_PRESET_DEFAULT ) ) != 0 )
-    {
-        WPRINT_SECURITY_ERROR(( " failed\n  ! mbedtls_ssl_config_defaults returned %d\n\n", ret ));
-        result = DTLS_ERROR;
-        goto ERROR_CLEANUP_EXIT;
-    }
+//    if( ( ret = mbedtls_ssl_config_defaults( &conf, MBEDTLS_SSL_IS_SERVER, MBEDTLS_SSL_TRANSPORT_DATAGRAM, MBEDTLS_SSL_PRESET_DEFAULT ) ) != 0 )
+//    {
+//        WPRINT_SECURITY_ERROR(( " failed\n  ! mbedtls_ssl_config_defaults returned %d\n\n", ret ));
+//        result = DTLS_ERROR;
+//        goto ERROR_CLEANUP_EXIT;
+//    }
 
-    /* configure random number generation function */
-    mbedtls_ssl_conf_rng( &conf, mbedtls_ctr_drbg_random, &ctr_drbg );
+//    /* configure random number generation function */
+//    mbedtls_ssl_conf_rng( &conf, mbedtls_ctr_drbg_random, &ctr_drbg );
 
-#if defined MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED
-    /* client authentication is disabled for now, we need to enable loading root CA chain when we add support for client authentication */
-    //mbedtls_ssl_conf_ca_chain( &conf, srvcert.next, NULL );
-    if( ( ret = mbedtls_ssl_conf_own_cert( &conf, &dtls_context->identity->certificate, &dtls_context->identity->private_key ) ) != 0 )
-    {
-        WPRINT_SECURITY_ERROR(( " failed\n  ! mbedtls_ssl_conf_own_cert returned %d\n\n", ret ));
-        result = DTLS_ERROR;
-        goto ERROR_CLEANUP_EXIT;
-    }
-#endif
+//#if defined MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED
+//    /* client authentication is disabled for now, we need to enable loading root CA chain when we add support for client authentication */
+//    //mbedtls_ssl_conf_ca_chain( &conf, srvcert.next, NULL );
+//    if( ( ret = mbedtls_ssl_conf_own_cert( &conf, &dtls_context->identity->certificate, &dtls_context->identity->private_key ) ) != 0 )
+//    {
+//        WPRINT_SECURITY_ERROR(( " failed\n  ! mbedtls_ssl_conf_own_cert returned %d\n\n", ret ));
+//        result = DTLS_ERROR;
+//        goto ERROR_CLEANUP_EXIT;
+//    }
+//#endif
 
-   if( ( ret = mbedtls_ssl_cookie_setup( &cookie_ctx, mbedtls_ctr_drbg_random, &ctr_drbg ) ) != 0 )
-   {
-       WPRINT_SECURITY_ERROR(( " failed\n  ! mbedtls_ssl_cookie_setup returned %d\n\n", ret ));
-       result = DTLS_ERROR;
-       goto ERROR_CLEANUP_EXIT;
-   }
+//   if( ( ret = mbedtls_ssl_cookie_setup( &cookie_ctx, mbedtls_ctr_drbg_random, &ctr_drbg ) ) != 0 )
+//   {
+//       WPRINT_SECURITY_ERROR(( " failed\n  ! mbedtls_ssl_cookie_setup returned %d\n\n", ret ));
+//       result = DTLS_ERROR;
+//       goto ERROR_CLEANUP_EXIT;
+//   }
 
-#if defined MBEDTLS_SSL_DTLS_HELLO_VERIFY
-   mbedtls_ssl_conf_dtls_cookies( &conf, mbedtls_ssl_cookie_write, mbedtls_ssl_cookie_check, &cookie_ctx );
-#endif
+//#if defined MBEDTLS_SSL_DTLS_HELLO_VERIFY
+//   mbedtls_ssl_conf_dtls_cookies( &conf, mbedtls_ssl_cookie_write, mbedtls_ssl_cookie_check, &cookie_ctx );
+//#endif
 
-   mbedtls_ssl_set_timer_cb( &ssl, &ssl, mbedtls_timing_set_delay, mbedtls_timing_get_delay );
-   mbedtls_ssl_set_bio( &ssl, &ssl, dtls_network_send, dtls_network_receive, NULL );
+//   mbedtls_ssl_set_timer_cb( &ssl, &ssl, mbedtls_timing_set_delay, mbedtls_timing_get_delay );
+//   mbedtls_ssl_set_bio( &ssl, &ssl, dtls_network_send, dtls_network_receive, NULL );
 
-#if defined MBEDTLS_KEY_EXCHANGE_PSK_ENABLED
-   mbedtls_ssl_conf_psk_cb (&conf, dtls_check_psk_identity, dtls_context->identity);
-#endif
+//#if defined MBEDTLS_KEY_EXCHANGE_PSK_ENABLED
+//   mbedtls_ssl_conf_psk_cb (&conf, dtls_check_psk_identity, dtls_context->identity);
+//#endif
 
-   if( ( ret = mbedtls_ssl_setup( &ssl, &conf ) ) != 0 )
-   {
-       WPRINT_SECURITY_ERROR(( " failed\n  ! mbedtls_ssl_setup returned %d\n\n", ret ));
-       result = DTLS_ERROR;
-       goto ERROR_CLEANUP_EXIT;
-   }
+//   if( ( ret = mbedtls_ssl_setup( &ssl, &conf ) ) != 0 )
+//   {
+//       WPRINT_SECURITY_ERROR(( " failed\n  ! mbedtls_ssl_setup returned %d\n\n", ret ));
+//       result = DTLS_ERROR;
+//       goto ERROR_CLEANUP_EXIT;
+//   }
 
-   return result;
+//   return result;
 
-ERROR_CLEANUP_EXIT:
-#if defined MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED
-  mbedtls_x509_crt_free( &dtls_context->identity->certificate );
-  mbedtls_pk_free( &dtls_context->identity->private_key );
-#endif
-  mbedtls_ssl_free( &ssl );
-  mbedtls_ssl_config_free( &conf );
-  mbedtls_ssl_cookie_free( &cookie_ctx );
-  mbedtls_ctr_drbg_free( &ctr_drbg );
+//ERROR_CLEANUP_EXIT:
+//#if defined MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED
+//  mbedtls_x509_crt_free( &dtls_context->identity->certificate );
+//  mbedtls_pk_free( &dtls_context->identity->private_key );
+//#endif
+//  mbedtls_ssl_free( &ssl );
+//  mbedtls_ssl_config_free( &conf );
+//  mbedtls_ssl_cookie_free( &cookie_ctx );
+//  mbedtls_ctr_drbg_free( &ctr_drbg );
 
-ERROR_TIMED_EVENT:
-    wiced_rtos_deinit_timer((wiced_timer_t*)dtls_context->context.timer_event);
+//ERROR_TIMED_EVENT:
+//    wiced_rtos_deinit_timer((wiced_timer_t*)dtls_context->context.timer_event);
 
-ERROR_REGISTER_CALLBACK:
-  wiced_udp_unregister_callbacks((wiced_udp_socket_t*)socket);
+//ERROR_REGISTER_CALLBACK:
+//  wiced_udp_unregister_callbacks((wiced_udp_socket_t*)socket);
 
-ERROR_CREATE_THREAD:
-  wiced_rtos_delete_thread( (wiced_thread_t*) dtls_context->event_thread);
+//ERROR_CREATE_THREAD:
+//  wiced_rtos_delete_thread( (wiced_thread_t*) dtls_context->event_thread);
 
-ERROR_QUEUE_INIT:
-  wiced_rtos_deinit_queue( (wiced_queue_t*)dtls_context->event_queue );
+//ERROR_QUEUE_INIT:
+//  wiced_rtos_deinit_queue( (wiced_queue_t*)dtls_context->event_queue );
 
 return result;
 
@@ -1179,24 +1180,24 @@ void printMemoryInfo()
  * else return error if no entry found  */
 int dtls_check_psk_identity( void* ctx, mbedtls_ssl_context* ssl, const unsigned char* PSK_identity, size_t PSK_identity_length )
 {
-    wiced_dtls_identity_t* identity = ( wiced_dtls_identity_t*) ctx;
-    wiced_tls_psk_info_t* psk_info;
+//    wiced_dtls_identity_t* identity = ( wiced_dtls_identity_t*) ctx;
+//    wiced_tls_psk_info_t* psk_info;
 
-    UNUSED_PARAMETER(identity);
-    UNUSED_PARAMETER(psk_info);
+//    UNUSED_PARAMETER(identity);
+//    UNUSED_PARAMETER(psk_info);
 
-#if defined MBEDTLS_KEY_EXCHANGE__SOME__PSK_ENABLED
-    linked_list_get_front_node( &identity->psk_key.psk_identity_list, (linked_list_node_t**) &psk_info );
-    while ( psk_info != NULL )
-    {
-        if( PSK_identity_length == strlen( psk_info->identity ) && memcmp( PSK_identity, psk_info->identity, PSK_identity_length ) == 0 )
-        {
-            return( mbedtls_ssl_set_hs_psk( ssl, (const unsigned char*) psk_info->key, psk_info->key_length ) );
-        }
+//#if defined MBEDTLS_KEY_EXCHANGE__SOME__PSK_ENABLED
+//    linked_list_get_front_node( &identity->psk_key.psk_identity_list, (linked_list_node_t**) &psk_info );
+//    while ( psk_info != NULL )
+//    {
+//        if( PSK_identity_length == strlen( psk_info->identity ) && memcmp( PSK_identity, psk_info->identity, PSK_identity_length ) == 0 )
+//        {
+//            return( mbedtls_ssl_set_hs_psk( ssl, (const unsigned char*) psk_info->key, psk_info->key_length ) );
+//        }
 
-        psk_info = (wiced_tls_psk_info_t*) psk_info->this_node.next;
-    }
-#endif
-    /* no matching PSK entry found */
+//        psk_info = (wiced_tls_psk_info_t*) psk_info->this_node.next;
+//    }
+//#endif
+//    /* no matching PSK entry found */
     return -1;
 }

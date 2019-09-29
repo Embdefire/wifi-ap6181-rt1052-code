@@ -567,9 +567,19 @@
               <FilePath>..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\lwipopts.h</FilePath>
             </File>
             <File>
-              <FileName>wifi_base_config.c</FileName>
+              <FileName>FreeRTOS_LwIP_appliance.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\user\wifi_base_config.c</FilePath>
+              <FilePath>..\..\user\appliance\FreeRTOS_LwIP_appliance.c</FilePath>
+            </File>
+            <File>
+              <FileName>FreeRTOS_LwIP_dhcp_server.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\appliance\FreeRTOS_LwIP_dhcp_server.c</FilePath>
+            </File>
+            <File>
+              <FileName>FreeRTOS_LwIP_dns_server.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\appliance\FreeRTOS_LwIP_dns_server.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2046,7 +2056,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>4</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -2074,7 +2084,7 @@
 --diag_suppress=66,1296,186,111</MiscControls>
               <Define>CPU_MIMXRT1052DVL6B,XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE =1,XIP_BOOT_HEADER_DCD_ENABLE =1,PRINTF_FLOAT_ENABLE=1, SCANF_FLOAT_ENABLE=1, PRINTF_ADVANCED_ENABLE=1, SCANF_ADVANCED_ENABLE=1,FSL_RTOS_FREE_RTOS,USE_RTOS=1,WICED_DISABLE_BOOTLOADER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\libraries\CMSIS\Include;..\..\libraries\drivers;..\..\libraries\utilities;..\..\libraries\utilities\str;..\..\libraries\utilities\log;..\..\libraries\utilities\io;..\..\libraries\xip;..\..\user;..\..\user\bsp;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\portable\RVDS\ARM_CM7\r0p1;..\..\WiFi\WICED\network\LwIP\ver2.0.3\port;..\..\WiFi\WICED\network\LwIP\ver2.0.3\src;..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include;..\..\lwip\contrib\apps;..\..\WiFi\include;..\..\WiFi\libraries\utilities\linked_list;..\..\WiFi\libraries\utilities\TLV;..\..\WiFi\resources\firmware\43362;..\..\WiFi\WICED\internal\unit;..\..\WiFi\WICED\internal;..\..\WiFi\WICED\network\LwIP\WWD;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\arch;..\..\WiFi\WICED\platform\MCU\iMXRT10xx;..\..\WiFi\WICED\platform\include;..\..\WiFi\WICED\platform\MCU\iMXRT10xx;..\..\WiFi\WICED\platform\MCU\iMXRT10xx\peripherals;..\..\WiFi\WICED\platform\MCU\iMXRT10xx\WWD;..\..\WiFi\WICED\WWD\include;..\..\WiFi\WICED\WWD\include\network;..\..\WiFi\WICED\WWD\include\platform;..\..\WiFi\WICED\WWD\include\RTOS;..\..\WiFi\WICED\WWD;..\..\WiFi\WICED\WWD\internal\bus_protocols;..\..\WiFi\WICED\WWD\internal\bus_protocols\SDIO;..\..\WiFi\WICED\WWD\internal\chips\43362;..\..\WiFi\WICED\RTOS\FreeRTOS\WWD;..\..\WiFi\WICED\WWD\internal;..\..\WiFi\WICED\platform\GCC;..\..\WiFi\WICED\security\BESL\crypto_internal;..\..\WiFi\WICED\security\BESL\mbedtls_open\include;..\..\WiFi\WICED\security\BESL\include;..\..\WiFi\WICED\RTOS\FreeRTOS\WICED;..\..\WiFi\WICED\platform\MCU;..\..\WiFi\libraries\utilities\ring_buffer;..\..\WiFi\WICED\RTOS\FreeRTOS\WWD\ARM_CM7;..\..\user\bsp\sdio\inc;..\..\user\bsp\sdio\port;..\..\WiFi\WICED\network\LwIP\WICED;..\..\WiFi\WICED\security\BESL\host\WICED;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\arch;..\..\WiFi\WICED\security\PostgreSQL\include</IncludePath>
+              <IncludePath>..\..\libraries\CMSIS\Include;..\..\libraries\drivers;..\..\libraries\utilities;..\..\libraries\utilities\str;..\..\libraries\utilities\log;..\..\libraries\utilities\io;..\..\libraries\xip;..\..\user;..\..\user\bsp;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\portable\RVDS\ARM_CM7\r0p1;..\..\WiFi\WICED\network\LwIP\ver2.0.3\port;..\..\WiFi\WICED\network\LwIP\ver2.0.3\src;..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include;..\..\lwip\contrib\apps;..\..\WiFi\include;..\..\WiFi\libraries\utilities\linked_list;..\..\WiFi\libraries\utilities\TLV;..\..\WiFi\resources\firmware\43362;..\..\WiFi\WICED\internal\unit;..\..\WiFi\WICED\internal;..\..\WiFi\WICED\network\LwIP\WWD;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\arch;..\..\WiFi\WICED\platform\MCU\iMXRT10xx;..\..\WiFi\WICED\platform\include;..\..\WiFi\WICED\platform\MCU\iMXRT10xx;..\..\WiFi\WICED\platform\MCU\iMXRT10xx\peripherals;..\..\WiFi\WICED\platform\MCU\iMXRT10xx\WWD;..\..\WiFi\WICED\WWD\include;..\..\WiFi\WICED\WWD\include\network;..\..\WiFi\WICED\WWD\include\platform;..\..\WiFi\WICED\WWD\include\RTOS;..\..\WiFi\WICED\WWD;..\..\WiFi\WICED\WWD\internal\bus_protocols;..\..\WiFi\WICED\WWD\internal\bus_protocols\SDIO;..\..\WiFi\WICED\WWD\internal\chips\43362;..\..\WiFi\WICED\RTOS\FreeRTOS\WWD;..\..\WiFi\WICED\WWD\internal;..\..\WiFi\WICED\platform\GCC;..\..\WiFi\WICED\security\BESL\crypto_internal;..\..\WiFi\WICED\security\BESL\mbedtls_open\include;..\..\WiFi\WICED\security\BESL\include;..\..\WiFi\WICED\RTOS\FreeRTOS\WICED;..\..\WiFi\WICED\platform\MCU;..\..\WiFi\libraries\utilities\ring_buffer;..\..\WiFi\WICED\RTOS\FreeRTOS\WWD\ARM_CM7;..\..\user\bsp\sdio\inc;..\..\user\bsp\sdio\port;..\..\WiFi\WICED\network\LwIP\WICED;..\..\WiFi\WICED\security\BESL\host\WICED;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\arch;..\..\WiFi\WICED\security\PostgreSQL\include;..\..\user\appliance;..\..\WiFi\WICED\security\BESL\WPS;..\..\WiFi\WICED\security\BESL\host\WICED;..\..\WiFi\WICED\security\BESL\P2P;..\..\WiFi\WICED\internal;..\..\WiFi\WICED\security\BESL\supplicant;..\..\WiFi\WICED\security\BESL\TLS;..\..\WiFi\WICED\security\BESL\DTLS</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2300,9 +2310,19 @@
               <FilePath>..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\lwipopts.h</FilePath>
             </File>
             <File>
-              <FileName>wifi_base_config.c</FileName>
+              <FileName>FreeRTOS_LwIP_appliance.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\user\wifi_base_config.c</FilePath>
+              <FilePath>..\..\user\appliance\FreeRTOS_LwIP_appliance.c</FilePath>
+            </File>
+            <File>
+              <FileName>FreeRTOS_LwIP_dhcp_server.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\appliance\FreeRTOS_LwIP_dhcp_server.c</FilePath>
+            </File>
+            <File>
+              <FileName>FreeRTOS_LwIP_dns_server.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\appliance\FreeRTOS_LwIP_dns_server.c</FilePath>
             </File>
           </Files>
         </Group>

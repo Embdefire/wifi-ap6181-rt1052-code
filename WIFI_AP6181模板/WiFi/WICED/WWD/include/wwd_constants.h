@@ -40,6 +40,7 @@
 #define INCLUDED_WWD_CONSTANTS_H_
 
 #include <stdint.h>
+#include "board.h"
 
 #ifdef __cplusplus
 extern "C"

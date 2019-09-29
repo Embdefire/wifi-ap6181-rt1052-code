@@ -46,7 +46,8 @@
 #include "network/wwd_buffer_interface.h"
 #include "besl_host_interface.h"
 #include "wiced_security_internal.h"
-#include "internal/wiced_internal_api.h"
+//#include "internal/wiced_internal_api.h"
+#include "wiced_internal_api.h"
 #include "wiced_tcpip_tls_api.h"
 #include "wiced_tcpip.h"
 #include <string.h>

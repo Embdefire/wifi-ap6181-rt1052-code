@@ -150,7 +150,7 @@ static void startup_thread( void *arg )
 
 /**
  *  LwIP初始化完成回调
- * @param arg : the handle for the semaphore to post (cast to a void pointer)
+ * @param arg : 信号量发布的句柄（投射到void指针）
  */
 
 static void tcpip_init_done( void * arg )
