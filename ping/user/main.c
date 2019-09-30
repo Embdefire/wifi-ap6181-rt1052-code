@@ -108,12 +108,19 @@ int main( void )
     GPIO_WritePinOutput(GPIO1, 10, 1);
     GPIO_WritePinOutput(GPIO1, 9, 0);
     GPIO_WritePinOutput(GPIO1, 9, 1);
-    /*创建一个初始线程 */
-    xTaskCreate(startup_thread, "app_thread", APP_THREAD_STACKSIZE/sizeof( portSTACK_TYPE ), NULL, DEFAULT_THREAD_PRIO, &startup_thread_handle);
-
-    /* 启动FreeRTOS调度程序-此调用永远不会返回*/
-    vTaskStartScheduler( );
-
+    /*创建一个初始线程 */									
+		BaseType_t xReturn = pdPASS;
+		xReturn = xTaskCreate((TaskFunction_t )startup_thread,  /* 任务入口函数 */
+													(const char*    )"app_thread",/* 任务名字 */
+													(uint16_t       )APP_THREAD_STACKSIZE/sizeof( portSTACK_TYPE ),  /* 任务栈大小 */
+													(void*          )NULL,/* 任务入口函数参数 */
+													(UBaseType_t    )DEFAULT_THREAD_PRIO, /* 任务的优先级 */
+													(TaskHandle_t*  )&startup_thread_handle);/* 任务控制块指针 */ 
+		 /* 启动任务调度 */           
+		if(pdPASS == xReturn)
+			vTaskStartScheduler();   /* 启动任务，开启调度 */
+		else
+			return -1;  
     /* 除非vTaskStartScheduler中出现错误，否则永远不要到这里 */
     WPRINT_APP_ERROR(("Main() function returned - error" ));
     return 0;
