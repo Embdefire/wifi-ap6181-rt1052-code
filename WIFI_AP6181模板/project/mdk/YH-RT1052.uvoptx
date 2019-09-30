@@ -308,7 +308,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>狊3</Name>
+          <Name>猬?T?T/R</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -320,27 +320,81 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>218</LineNumber>
+          <LineNumber>156</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>76010</Address>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\..\user\appliance\FreeRTOS_LwIP_dhcp_server.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>147</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\..\user\appliance\FreeRTOS_LwIP_dhcp_server.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>150</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>21850</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\..\WiFi\WICED\WWD\internal\wwd_management.c</Filename>
+          <Filename>E:\閲庣伀鐢靛瓙\WIFI\WIFI__AP6181\base_code_rt1052\WIFI_AP6181妯℃澘\user\appliance\FreeRTOS_LwIP_dhcp_server.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\YH_RT1052\../../WiFi/WICED/WWD/internal/wwd_management.c\218</Expression>
+          <Expression>\\YH_RT1052\../../user/appliance/FreeRTOS_LwIP_dhcp_server.c\150</Expression>
         </Bp>
       </Breakpoint>
+      <WatchWindow1>
+        <Ww>
+          <count>0</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>dhcp_header_ptr,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>new_ip_addr,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>2</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>my_addr,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>3</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>server_ip_addr_option_buff,0x0A</ItemText>
+        </Ww>
+      </WatchWindow1>
       <Tracepoint>
         <THDelay>0</THDelay>
       </Tracepoint>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>1</aLwin>
+        <aLwin>0</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
@@ -780,7 +834,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\WWD\ARM_CM7\FreeRTOSConfig.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\WWD\ARM_CM7\FreeRTOSConfig.h</PathWithFileName>
       <FilenameWithoutPath>FreeRTOSConfig.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -792,7 +846,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\lwipopts.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\WWD\FreeRTOS\lwipopts.h</PathWithFileName>
       <FilenameWithoutPath>lwipopts.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -912,7 +966,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\croutine.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\croutine.h</PathWithFileName>
       <FilenameWithoutPath>croutine.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -924,7 +978,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\deprecated_definitions.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\deprecated_definitions.h</PathWithFileName>
       <FilenameWithoutPath>deprecated_definitions.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -936,7 +990,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\event_groups.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\event_groups.h</PathWithFileName>
       <FilenameWithoutPath>event_groups.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -948,7 +1002,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\FreeRTOS.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\FreeRTOS.h</PathWithFileName>
       <FilenameWithoutPath>FreeRTOS.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -960,7 +1014,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\list.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\list.h</PathWithFileName>
       <FilenameWithoutPath>list.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -972,7 +1026,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\mpu_prototypes.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\mpu_prototypes.h</PathWithFileName>
       <FilenameWithoutPath>mpu_prototypes.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -984,7 +1038,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\mpu_wrappers.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\mpu_wrappers.h</PathWithFileName>
       <FilenameWithoutPath>mpu_wrappers.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -996,7 +1050,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\portable.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\portable.h</PathWithFileName>
       <FilenameWithoutPath>portable.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1008,7 +1062,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\projdefs.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\projdefs.h</PathWithFileName>
       <FilenameWithoutPath>projdefs.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1020,7 +1074,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\queue.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\queue.h</PathWithFileName>
       <FilenameWithoutPath>queue.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1032,7 +1086,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\semphr.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\semphr.h</PathWithFileName>
       <FilenameWithoutPath>semphr.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1044,7 +1098,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\StackMacros.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\StackMacros.h</PathWithFileName>
       <FilenameWithoutPath>StackMacros.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1056,7 +1110,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\task.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\task.h</PathWithFileName>
       <FilenameWithoutPath>task.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1068,7 +1122,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\timers.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include\timers.h</PathWithFileName>
       <FilenameWithoutPath>timers.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1088,7 +1142,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\croutine.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\croutine.c</PathWithFileName>
       <FilenameWithoutPath>croutine.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1100,7 +1154,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\event_groups.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\event_groups.c</PathWithFileName>
       <FilenameWithoutPath>event_groups.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1112,7 +1166,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\list.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\list.c</PathWithFileName>
       <FilenameWithoutPath>list.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1124,7 +1178,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\queue.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\queue.c</PathWithFileName>
       <FilenameWithoutPath>queue.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1136,7 +1190,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\tasks.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\tasks.c</PathWithFileName>
       <FilenameWithoutPath>tasks.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1148,7 +1202,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\timers.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\timers.c</PathWithFileName>
       <FilenameWithoutPath>timers.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1168,7 +1222,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\portable\MemMang\heap_3.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\portable\MemMang\heap_3.c</PathWithFileName>
       <FilenameWithoutPath>heap_3.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1180,7 +1234,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\portable\RVDS\ARM_CM7\r0p1\port.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\portable\RVDS\ARM_CM7\r0p1\port.c</PathWithFileName>
       <FilenameWithoutPath>port.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1192,7 +1246,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\portable\RVDS\ARM_CM7\r0p1\fsl_tickless_systick.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\ver9.0.0\Source\portable\RVDS\ARM_CM7\r0p1\fsl_tickless_systick.c</PathWithFileName>
       <FilenameWithoutPath>fsl_tickless_systick.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1212,7 +1266,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\sys_arch.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\WWD\FreeRTOS\sys_arch.c</PathWithFileName>
       <FilenameWithoutPath>sys_arch.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1232,7 +1286,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\api\api_lib.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\api\api_lib.c</PathWithFileName>
       <FilenameWithoutPath>api_lib.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1244,7 +1298,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\api\api_msg.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\api\api_msg.c</PathWithFileName>
       <FilenameWithoutPath>api_msg.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1256,7 +1310,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\api\err.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\api\err.c</PathWithFileName>
       <FilenameWithoutPath>err.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1268,7 +1322,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\api\netbuf.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\api\netbuf.c</PathWithFileName>
       <FilenameWithoutPath>netbuf.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1280,7 +1334,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\api\netdb.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\api\netdb.c</PathWithFileName>
       <FilenameWithoutPath>netdb.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1292,7 +1346,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\api\netifapi.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\api\netifapi.c</PathWithFileName>
       <FilenameWithoutPath>netifapi.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1304,7 +1358,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\api\sockets.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\api\sockets.c</PathWithFileName>
       <FilenameWithoutPath>sockets.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1316,7 +1370,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\api\tcpip.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\api\tcpip.c</PathWithFileName>
       <FilenameWithoutPath>tcpip.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1336,7 +1390,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\def.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\def.c</PathWithFileName>
       <FilenameWithoutPath>def.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1348,7 +1402,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\dns.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\dns.c</PathWithFileName>
       <FilenameWithoutPath>dns.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1360,7 +1414,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\inet_chksum.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\inet_chksum.c</PathWithFileName>
       <FilenameWithoutPath>inet_chksum.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1372,7 +1426,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\init.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\init.c</PathWithFileName>
       <FilenameWithoutPath>init.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1384,7 +1438,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ip.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ip.c</PathWithFileName>
       <FilenameWithoutPath>ip.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1396,7 +1450,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\mem.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\mem.c</PathWithFileName>
       <FilenameWithoutPath>mem.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1408,7 +1462,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\memp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\memp.c</PathWithFileName>
       <FilenameWithoutPath>memp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1420,7 +1474,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\netif.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\netif.c</PathWithFileName>
       <FilenameWithoutPath>netif.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1432,7 +1486,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\pbuf.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\pbuf.c</PathWithFileName>
       <FilenameWithoutPath>pbuf.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1444,7 +1498,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\raw.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\raw.c</PathWithFileName>
       <FilenameWithoutPath>raw.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1456,7 +1510,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\stats.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\stats.c</PathWithFileName>
       <FilenameWithoutPath>stats.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1468,7 +1522,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\sys.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\sys.c</PathWithFileName>
       <FilenameWithoutPath>sys.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1480,7 +1534,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\tcp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\tcp.c</PathWithFileName>
       <FilenameWithoutPath>tcp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1492,7 +1546,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\tcp_in.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\tcp_in.c</PathWithFileName>
       <FilenameWithoutPath>tcp_in.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1504,7 +1558,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\tcp_out.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\tcp_out.c</PathWithFileName>
       <FilenameWithoutPath>tcp_out.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1516,7 +1570,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\timeouts.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\timeouts.c</PathWithFileName>
       <FilenameWithoutPath>timeouts.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1528,7 +1582,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\udp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\udp.c</PathWithFileName>
       <FilenameWithoutPath>udp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1548,7 +1602,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv4\autoip.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv4\autoip.c</PathWithFileName>
       <FilenameWithoutPath>autoip.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1560,7 +1614,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv4\dhcp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv4\dhcp.c</PathWithFileName>
       <FilenameWithoutPath>dhcp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1572,7 +1626,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv4\etharp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv4\etharp.c</PathWithFileName>
       <FilenameWithoutPath>etharp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1584,7 +1638,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv4\icmp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv4\icmp.c</PathWithFileName>
       <FilenameWithoutPath>icmp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1596,7 +1650,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv4\igmp.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv4\igmp.c</PathWithFileName>
       <FilenameWithoutPath>igmp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1608,7 +1662,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv4\ip4.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv4\ip4.c</PathWithFileName>
       <FilenameWithoutPath>ip4.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1620,7 +1674,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv4\ip4_addr.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv4\ip4_addr.c</PathWithFileName>
       <FilenameWithoutPath>ip4_addr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1632,7 +1686,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv4\ip4_frag.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv4\ip4_frag.c</PathWithFileName>
       <FilenameWithoutPath>ip4_frag.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1652,7 +1706,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv6\dhcp6.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv6\dhcp6.c</PathWithFileName>
       <FilenameWithoutPath>dhcp6.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1664,7 +1718,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv6\ethip6.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv6\ethip6.c</PathWithFileName>
       <FilenameWithoutPath>ethip6.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1676,7 +1730,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv6\icmp6.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv6\icmp6.c</PathWithFileName>
       <FilenameWithoutPath>icmp6.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1688,7 +1742,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv6\inet6.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv6\inet6.c</PathWithFileName>
       <FilenameWithoutPath>inet6.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1700,7 +1754,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv6\ip6.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv6\ip6.c</PathWithFileName>
       <FilenameWithoutPath>ip6.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1712,7 +1766,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv6\ip6_addr.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv6\ip6_addr.c</PathWithFileName>
       <FilenameWithoutPath>ip6_addr.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1724,7 +1778,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv6\ip6_frag.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv6\ip6_frag.c</PathWithFileName>
       <FilenameWithoutPath>ip6_frag.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1736,7 +1790,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv6\mld6.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv6\mld6.c</PathWithFileName>
       <FilenameWithoutPath>mld6.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1748,7 +1802,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\core\ipv6\nd6.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\core\ipv6\nd6.c</PathWithFileName>
       <FilenameWithoutPath>nd6.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1768,7 +1822,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\api.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\api.h</PathWithFileName>
       <FilenameWithoutPath>api.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1780,7 +1834,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\arch.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\arch.h</PathWithFileName>
       <FilenameWithoutPath>arch.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1792,7 +1846,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\autoip.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\autoip.h</PathWithFileName>
       <FilenameWithoutPath>autoip.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1804,7 +1858,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\debug.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\debug.h</PathWithFileName>
       <FilenameWithoutPath>debug.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1816,7 +1870,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\def.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\def.h</PathWithFileName>
       <FilenameWithoutPath>def.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1828,7 +1882,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\dhcp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\dhcp.h</PathWithFileName>
       <FilenameWithoutPath>dhcp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1840,7 +1894,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\dhcp6.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\dhcp6.h</PathWithFileName>
       <FilenameWithoutPath>dhcp6.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1852,7 +1906,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\dns.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\dns.h</PathWithFileName>
       <FilenameWithoutPath>dns.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1864,7 +1918,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\err.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\err.h</PathWithFileName>
       <FilenameWithoutPath>err.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1876,7 +1930,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\errno.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\errno.h</PathWithFileName>
       <FilenameWithoutPath>errno.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1888,7 +1942,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\etharp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\etharp.h</PathWithFileName>
       <FilenameWithoutPath>etharp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1900,7 +1954,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\ethip6.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\ethip6.h</PathWithFileName>
       <FilenameWithoutPath>ethip6.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1912,7 +1966,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\icmp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\icmp.h</PathWithFileName>
       <FilenameWithoutPath>icmp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1924,7 +1978,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\icmp6.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\icmp6.h</PathWithFileName>
       <FilenameWithoutPath>icmp6.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1936,7 +1990,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\igmp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\igmp.h</PathWithFileName>
       <FilenameWithoutPath>igmp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1948,7 +2002,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\inet.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\inet.h</PathWithFileName>
       <FilenameWithoutPath>inet.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1960,7 +2014,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\inet_chksum.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\inet_chksum.h</PathWithFileName>
       <FilenameWithoutPath>inet_chksum.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1972,7 +2026,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\init.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\init.h</PathWithFileName>
       <FilenameWithoutPath>init.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1984,7 +2038,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip.h</PathWithFileName>
       <FilenameWithoutPath>ip.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -1996,7 +2050,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip_addr.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip_addr.h</PathWithFileName>
       <FilenameWithoutPath>ip_addr.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2008,7 +2062,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip4.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip4.h</PathWithFileName>
       <FilenameWithoutPath>ip4.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2020,7 +2074,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip4_addr.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip4_addr.h</PathWithFileName>
       <FilenameWithoutPath>ip4_addr.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2032,7 +2086,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip4_frag.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip4_frag.h</PathWithFileName>
       <FilenameWithoutPath>ip4_frag.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2044,7 +2098,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip6.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip6.h</PathWithFileName>
       <FilenameWithoutPath>ip6.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2056,7 +2110,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip6_addr.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip6_addr.h</PathWithFileName>
       <FilenameWithoutPath>ip6_addr.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2068,7 +2122,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip6_frag.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\ip6_frag.h</PathWithFileName>
       <FilenameWithoutPath>ip6_frag.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2080,7 +2134,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\mem.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\mem.h</PathWithFileName>
       <FilenameWithoutPath>mem.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2092,7 +2146,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\memp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\memp.h</PathWithFileName>
       <FilenameWithoutPath>memp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2104,7 +2158,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\mld6.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\mld6.h</PathWithFileName>
       <FilenameWithoutPath>mld6.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2116,7 +2170,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\nd6.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\nd6.h</PathWithFileName>
       <FilenameWithoutPath>nd6.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2128,7 +2182,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\netbuf.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\netbuf.h</PathWithFileName>
       <FilenameWithoutPath>netbuf.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2140,7 +2194,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\netdb.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\netdb.h</PathWithFileName>
       <FilenameWithoutPath>netdb.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2152,7 +2206,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\netif.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\netif.h</PathWithFileName>
       <FilenameWithoutPath>netif.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2164,7 +2218,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\netifapi.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\netifapi.h</PathWithFileName>
       <FilenameWithoutPath>netifapi.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2176,7 +2230,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\opt.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\opt.h</PathWithFileName>
       <FilenameWithoutPath>opt.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2188,7 +2242,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\pbuf.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\pbuf.h</PathWithFileName>
       <FilenameWithoutPath>pbuf.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2200,7 +2254,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\raw.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\raw.h</PathWithFileName>
       <FilenameWithoutPath>raw.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2212,7 +2266,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\sio.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\sio.h</PathWithFileName>
       <FilenameWithoutPath>sio.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2224,7 +2278,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\snmp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\snmp.h</PathWithFileName>
       <FilenameWithoutPath>snmp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2236,7 +2290,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\sockets.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\sockets.h</PathWithFileName>
       <FilenameWithoutPath>sockets.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2248,7 +2302,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\stats.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\stats.h</PathWithFileName>
       <FilenameWithoutPath>stats.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2260,7 +2314,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\sys.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\sys.h</PathWithFileName>
       <FilenameWithoutPath>sys.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2272,7 +2326,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\tcp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\tcp.h</PathWithFileName>
       <FilenameWithoutPath>tcp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2284,7 +2338,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\tcpip.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\tcpip.h</PathWithFileName>
       <FilenameWithoutPath>tcpip.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2296,7 +2350,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\timeouts.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\timeouts.h</PathWithFileName>
       <FilenameWithoutPath>timeouts.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2308,7 +2362,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\udp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\udp.h</PathWithFileName>
       <FilenameWithoutPath>udp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2328,7 +2382,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\api_msg.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\api_msg.h</PathWithFileName>
       <FilenameWithoutPath>api_msg.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2340,7 +2394,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\memp_priv.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\memp_priv.h</PathWithFileName>
       <FilenameWithoutPath>memp_priv.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2352,7 +2406,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\memp_std.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\memp_std.h</PathWithFileName>
       <FilenameWithoutPath>memp_std.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2364,7 +2418,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\nd6_priv.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\nd6_priv.h</PathWithFileName>
       <FilenameWithoutPath>nd6_priv.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2376,7 +2430,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\tcp_priv.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\tcp_priv.h</PathWithFileName>
       <FilenameWithoutPath>tcp_priv.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2388,7 +2442,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\tcpip_priv.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\priv\tcpip_priv.h</PathWithFileName>
       <FilenameWithoutPath>tcpip_priv.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2408,7 +2462,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\autoip.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\autoip.h</PathWithFileName>
       <FilenameWithoutPath>autoip.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2420,7 +2474,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\dhcp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\dhcp.h</PathWithFileName>
       <FilenameWithoutPath>dhcp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2432,7 +2486,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\dns.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\dns.h</PathWithFileName>
       <FilenameWithoutPath>dns.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2444,7 +2498,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\etharp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\etharp.h</PathWithFileName>
       <FilenameWithoutPath>etharp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2456,7 +2510,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\ethernet.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\ethernet.h</PathWithFileName>
       <FilenameWithoutPath>ethernet.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2468,7 +2522,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\icmp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\icmp.h</PathWithFileName>
       <FilenameWithoutPath>icmp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2480,7 +2534,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\icmp6.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\icmp6.h</PathWithFileName>
       <FilenameWithoutPath>icmp6.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2492,7 +2546,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\igmp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\igmp.h</PathWithFileName>
       <FilenameWithoutPath>igmp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2504,7 +2558,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\ip.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\ip.h</PathWithFileName>
       <FilenameWithoutPath>ip.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2516,7 +2570,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\ip4.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\ip4.h</PathWithFileName>
       <FilenameWithoutPath>ip4.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2528,7 +2582,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\ip6.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\ip6.h</PathWithFileName>
       <FilenameWithoutPath>ip6.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2540,7 +2594,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\mld6.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\mld6.h</PathWithFileName>
       <FilenameWithoutPath>mld6.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2552,7 +2606,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\nd6.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\nd6.h</PathWithFileName>
       <FilenameWithoutPath>nd6.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2564,7 +2618,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\tcp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\tcp.h</PathWithFileName>
       <FilenameWithoutPath>tcp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2576,7 +2630,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\udp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\lwip\prot\udp.h</PathWithFileName>
       <FilenameWithoutPath>udp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2596,7 +2650,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\etharp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\etharp.h</PathWithFileName>
       <FilenameWithoutPath>etharp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2608,7 +2662,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ethernet.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ethernet.h</PathWithFileName>
       <FilenameWithoutPath>ethernet.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2620,7 +2674,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\lowpan6.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\lowpan6.h</PathWithFileName>
       <FilenameWithoutPath>lowpan6.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2632,7 +2686,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\lowpan6_opts.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\lowpan6_opts.h</PathWithFileName>
       <FilenameWithoutPath>lowpan6_opts.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2644,7 +2698,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\slipif.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\slipif.h</PathWithFileName>
       <FilenameWithoutPath>slipif.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2664,7 +2718,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ccp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ccp.h</PathWithFileName>
       <FilenameWithoutPath>ccp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2676,7 +2730,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\chap_ms.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\chap_ms.h</PathWithFileName>
       <FilenameWithoutPath>chap_ms.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2688,7 +2742,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\chap-md5.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\chap-md5.h</PathWithFileName>
       <FilenameWithoutPath>chap-md5.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2700,7 +2754,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\chap-new.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\chap-new.h</PathWithFileName>
       <FilenameWithoutPath>chap-new.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2712,7 +2766,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\eap.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\eap.h</PathWithFileName>
       <FilenameWithoutPath>eap.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2724,7 +2778,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ecp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ecp.h</PathWithFileName>
       <FilenameWithoutPath>ecp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2736,7 +2790,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\eui64.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\eui64.h</PathWithFileName>
       <FilenameWithoutPath>eui64.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2748,7 +2802,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\fsm.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\fsm.h</PathWithFileName>
       <FilenameWithoutPath>fsm.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2760,7 +2814,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ipcp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ipcp.h</PathWithFileName>
       <FilenameWithoutPath>ipcp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2772,7 +2826,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ipv6cp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ipv6cp.h</PathWithFileName>
       <FilenameWithoutPath>ipv6cp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2784,7 +2838,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\lcp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\lcp.h</PathWithFileName>
       <FilenameWithoutPath>lcp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2796,7 +2850,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\magic.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\magic.h</PathWithFileName>
       <FilenameWithoutPath>magic.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2808,7 +2862,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\mppe.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\mppe.h</PathWithFileName>
       <FilenameWithoutPath>mppe.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2820,7 +2874,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ppp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ppp.h</PathWithFileName>
       <FilenameWithoutPath>ppp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2832,7 +2886,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ppp_impl.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ppp_impl.h</PathWithFileName>
       <FilenameWithoutPath>ppp_impl.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2844,7 +2898,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ppp_opts.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\ppp_opts.h</PathWithFileName>
       <FilenameWithoutPath>ppp_opts.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2856,7 +2910,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppapi.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppapi.h</PathWithFileName>
       <FilenameWithoutPath>pppapi.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2868,7 +2922,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppcrypt.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppcrypt.h</PathWithFileName>
       <FilenameWithoutPath>pppcrypt.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2880,7 +2934,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppdebug.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppdebug.h</PathWithFileName>
       <FilenameWithoutPath>pppdebug.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2892,7 +2946,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppoe.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppoe.h</PathWithFileName>
       <FilenameWithoutPath>pppoe.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2904,7 +2958,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppol2tp.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppol2tp.h</PathWithFileName>
       <FilenameWithoutPath>pppol2tp.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2916,7 +2970,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppos.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\pppos.h</PathWithFileName>
       <FilenameWithoutPath>pppos.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2928,7 +2982,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\upap.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\upap.h</PathWithFileName>
       <FilenameWithoutPath>upap.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2940,7 +2994,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\vj.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\vj.h</PathWithFileName>
       <FilenameWithoutPath>vj.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2960,7 +3014,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\polarssl\arc4.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\polarssl\arc4.h</PathWithFileName>
       <FilenameWithoutPath>arc4.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2972,7 +3026,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\polarssl\des.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\polarssl\des.h</PathWithFileName>
       <FilenameWithoutPath>des.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2984,7 +3038,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\polarssl\md4.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\polarssl\md4.h</PathWithFileName>
       <FilenameWithoutPath>md4.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -2996,7 +3050,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\polarssl\md5.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\polarssl\md5.h</PathWithFileName>
       <FilenameWithoutPath>md5.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3008,7 +3062,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\polarssl\sha1.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\netif\ppp\polarssl\sha1.h</PathWithFileName>
       <FilenameWithoutPath>sha1.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3028,7 +3082,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\posix\errno.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\posix\errno.h</PathWithFileName>
       <FilenameWithoutPath>errno.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3040,7 +3094,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\posix\netdb.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\posix\netdb.h</PathWithFileName>
       <FilenameWithoutPath>netdb.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3060,7 +3114,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include\posix\sys\socket.h</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\include\posix\sys\socket.h</PathWithFileName>
       <FilenameWithoutPath>socket.h</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3080,7 +3134,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\netif\ethernet.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\netif\ethernet.c</PathWithFileName>
       <FilenameWithoutPath>ethernet.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3092,7 +3146,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\netif\ethernetif.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\netif\ethernetif.c</PathWithFileName>
       <FilenameWithoutPath>ethernetif.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3104,7 +3158,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\netif\lowpan6.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\ver2.0.3\src\netif\lowpan6.c</PathWithFileName>
       <FilenameWithoutPath>lowpan6.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3124,7 +3178,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\bus_protocols\SDIO\wwd_bus_protocol.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\bus_protocols\SDIO\wwd_bus_protocol.c</PathWithFileName>
       <FilenameWithoutPath>wwd_bus_protocol.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3136,7 +3190,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\bus_protocols\wwd_bus_common.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\bus_protocols\wwd_bus_common.c</PathWithFileName>
       <FilenameWithoutPath>wwd_bus_common.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3148,7 +3202,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\chips\43362\wwd_ap.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\chips\43362\wwd_ap.c</PathWithFileName>
       <FilenameWithoutPath>wwd_ap.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3160,7 +3214,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\chips\43362\wwd_chip_specific_functions.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\chips\43362\wwd_chip_specific_functions.c</PathWithFileName>
       <FilenameWithoutPath>wwd_chip_specific_functions.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3172,7 +3226,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_ap_common.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_ap_common.c</PathWithFileName>
       <FilenameWithoutPath>wwd_ap_common.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3184,7 +3238,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_debug.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_debug.c</PathWithFileName>
       <FilenameWithoutPath>wwd_debug.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3196,7 +3250,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_eapol.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_eapol.c</PathWithFileName>
       <FilenameWithoutPath>wwd_eapol.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3208,7 +3262,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_internal.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_internal.c</PathWithFileName>
       <FilenameWithoutPath>wwd_internal.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3220,7 +3274,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_logging.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_logging.c</PathWithFileName>
       <FilenameWithoutPath>wwd_logging.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3232,7 +3286,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_management.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_management.c</PathWithFileName>
       <FilenameWithoutPath>wwd_management.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3244,7 +3298,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_rtos_interface.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_rtos_interface.c</PathWithFileName>
       <FilenameWithoutPath>wwd_rtos_interface.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3256,7 +3310,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_sdpcm.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_sdpcm.c</PathWithFileName>
       <FilenameWithoutPath>wwd_sdpcm.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3268,7 +3322,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_thread.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_thread.c</PathWithFileName>
       <FilenameWithoutPath>wwd_thread.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3280,7 +3334,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_thread_internal.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_thread_internal.c</PathWithFileName>
       <FilenameWithoutPath>wwd_thread_internal.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3292,7 +3346,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_wifi.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_wifi.c</PathWithFileName>
       <FilenameWithoutPath>wwd_wifi.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3304,7 +3358,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_wifi_chip_common.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_wifi_chip_common.c</PathWithFileName>
       <FilenameWithoutPath>wwd_wifi_chip_common.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3316,7 +3370,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\WWD\internal\wwd_wifi_sleep.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\WWD\internal\wwd_wifi_sleep.c</PathWithFileName>
       <FilenameWithoutPath>wwd_wifi_sleep.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3328,7 +3382,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\RTOS\FreeRTOS\WWD\wwd_rtos.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\RTOS\FreeRTOS\WWD\wwd_rtos.c</PathWithFileName>
       <FilenameWithoutPath>wwd_rtos.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3340,7 +3394,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\platform\MCU\iMXRT10xx\WWD\wlan_bus_sdio.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\platform\MCU\iMXRT10xx\WWD\wlan_bus_sdio.c</PathWithFileName>
       <FilenameWithoutPath>wlan_bus_sdio.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3352,7 +3406,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\platform\MCU\iMXRT10xx\WWD\wwd_platform.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\platform\MCU\iMXRT10xx\WWD\wwd_platform.c</PathWithFileName>
       <FilenameWithoutPath>wwd_platform.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3364,7 +3418,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\platform\MCU\platform_resource.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\platform\MCU\platform_resource.c</PathWithFileName>
       <FilenameWithoutPath>platform_resource.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3376,7 +3430,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\platform\MCU\wwd_resources.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\platform\MCU\wwd_resources.c</PathWithFileName>
       <FilenameWithoutPath>wwd_resources.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3388,7 +3442,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\platform\MCU\wwd_platform_separate_mcu.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\platform\MCU\wwd_platform_separate_mcu.c</PathWithFileName>
       <FilenameWithoutPath>wwd_platform_separate_mcu.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3400,7 +3454,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\platform\ARM_CM7\host_cm7.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\platform\ARM_CM7\host_cm7.c</PathWithFileName>
       <FilenameWithoutPath>host_cm7.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3412,7 +3466,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\WWD\wwd_buffer.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\WWD\wwd_buffer.c</PathWithFileName>
       <FilenameWithoutPath>wwd_buffer.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3424,7 +3478,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\resources\firmware\43362\43362A2_bin.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\resources\firmware\43362\43362A2_bin.c</PathWithFileName>
       <FilenameWithoutPath>43362A2_bin.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3436,7 +3490,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\libraries\utilities\TLV\tlv.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\libraries\utilities\TLV\tlv.c</PathWithFileName>
       <FilenameWithoutPath>tlv.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3448,7 +3502,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\libraries\utilities\ring_buffer\ring_buffer.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\libraries\utilities\ring_buffer\ring_buffer.c</PathWithFileName>
       <FilenameWithoutPath>ring_buffer.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3460,7 +3514,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\internal\wiced_lib.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\internal\wiced_lib.c</PathWithFileName>
       <FilenameWithoutPath>wiced_lib.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3472,7 +3526,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\network\LwIP\WWD\wwd_network.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\network\LwIP\WWD\wwd_network.c</PathWithFileName>
       <FilenameWithoutPath>wwd_network.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
@@ -3484,7 +3538,7 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\WiFi\WICED\internal\wiced_crypto.c</PathWithFileName>
+      <PathWithFileName>..\..\..\WiFi_SDk\WICED\internal\wiced_crypto.c</PathWithFileName>
       <FilenameWithoutPath>wiced_crypto.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
