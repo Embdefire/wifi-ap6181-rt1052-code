@@ -35,7 +35,7 @@
 /* Prevent having to link sys_arch.c (we don't test the API layers in unit tests) */
 #define NO_SYS                          1
 #define LWIP_NETCONN                    0
-#define LWIP_SOCKET                     0
+#define LWIP_SOCKET                     1
 #define SYS_LIGHTWEIGHT_PROT            0
 
 #define LWIP_IPV6                       1
