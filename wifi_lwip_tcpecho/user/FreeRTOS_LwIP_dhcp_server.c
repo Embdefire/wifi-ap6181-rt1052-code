@@ -130,7 +130,7 @@ void start_dhcp_server( uint32_t local_addr )
 													 (UBaseType_t    )DEFAULT_THREAD_PRIO, /* 任务的优先级 */
 													 (TaskHandle_t*  )&dhcp_thread_handle);/* 任务控制块指针 */ 
 													 			 
-		sys_thread_new("tcpecho_thread", tcpecho_thread, NULL, 512, 2);
+		tcpecho_init();
 													 
 	  /* 创建 BinarySem */
 		BinarySem_Handle = xSemaphoreCreateBinary();	 
@@ -140,7 +140,7 @@ void start_dhcp_server( uint32_t local_addr )
 													(const char*    )"Receive_Task",/* 任务名字 */
 													(uint16_t       )512,   /* 任务栈大小 */
 													(void*          )NULL,	/* 任务入口函数参数 */
-													(UBaseType_t    )2,	    /* 任务的优先级 */
+													(UBaseType_t    )4,	    /* 任务的优先级 */
 													(TaskHandle_t*  )&Receive_Task_Handle);/* 任务控制块指针 */
 
 		 /* 启动任务调度 */           

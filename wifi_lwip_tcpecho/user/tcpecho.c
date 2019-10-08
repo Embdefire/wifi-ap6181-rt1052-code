@@ -43,7 +43,7 @@
 #define LOCAL_PORT                 5001
 extern SemaphoreHandle_t BinarySem_Handle;
 void *data;
-void 
+static void 
 tcpecho_thread(void *arg)
 {
   struct netconn *conn, *newconn;
