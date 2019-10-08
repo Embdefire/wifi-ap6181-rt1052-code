@@ -1,9 +1,3 @@
-/**
- * @file
- * 	小型DHCP服务器。
- *	允许多个客户端。
- */
-
 #include "lwip/sockets.h"  /* equivalent of <sys/socket.h> */
 #include <string.h>
 #include <stdint.h>
@@ -37,8 +31,6 @@
 #define DHCPINFORM                      (8)
 
 /* DHCP服务器和客户端的UDP端口号*/
-//#define IPPORT_DHCPS                   (67)
-//#define IPPORT_DHCPC                   (68)
 #define IPPORT_DHCPS                   (67)
 #define IPPORT_DHCPC                   (68)
 
@@ -85,6 +77,7 @@ typedef struct
  ******************************************************/
 static unsigned char * find_option( dhcp_header_t* request, unsigned char option_num );
 static void dhcp_thread( void * thread_input );
+static void Receive_Task(void* parameter);
 
 /******************************************************
  *              变量定义
@@ -102,10 +95,14 @@ static char             dhcp_magic_cookie[]           = { 0x63, 0x82, 0x53, 0x63
 static volatile char    dhcp_quit_flag = 0;
 static int              dhcp_socket_handle            = -1;
 
+/*任务句柄*/
 static xTaskHandle      dhcp_thread_handle;
-static xTaskHandle      tcpecho_thread_handle;
-static dhcp_header_t    dhcp_header_buff;
+static xTaskHandle      Receive_Task_Handle;
+/*信号量*/
+SemaphoreHandle_t BinarySem_Handle =NULL;
 
+static dhcp_header_t    dhcp_header_buff;
+extern char *recv_data;
 
 #define ADDR_ARY_LEN    10
 struct sockaddr_in      source_addr_ary[ADDR_ARY_LEN];
@@ -114,32 +111,40 @@ int addr_atry_index=0;
  *              功能定义
  ******************************************************/
 extern void tcpecho_thread(void *arg);
-
+/**
+ * @brief start_dhcp_server
+ *
+ * @param local_addr 热点地址（服务器IP）
+ */
 void start_dhcp_server( uint32_t local_addr )
 {
 	  /*创建一个初始线程 */									
 		BaseType_t xReturn = pdPASS;
-	
+		
 		xReturn = xTaskCreate( (TaskFunction_t )dhcp_thread, /* 任务入口函数 */
 													 (const char*    )"DHCP thread", /* 任务名字 */
 													 (uint16_t       )DHCP_STACK_SIZE/sizeof( portSTACK_TYPE ),/* 任务栈大小 */
 													 (void*          )(void*)local_addr, /* 任务入口函数参数 */
 													 (UBaseType_t    )DEFAULT_THREAD_PRIO, /* 任务的优先级 */
 													 (TaskHandle_t*  )&dhcp_thread_handle);/* 任务控制块指针 */ 
+													 			 
+		sys_thread_new("tcpecho_thread", tcpecho_thread, NULL, 512, 2);
 													 
-//		xReturn = xTaskCreate( (TaskFunction_t )tcpecho_thread, /* 任务入口函数 */
-//			 (const char*    )"tcpecho_thread", /* 任务名字 */
-//			 (uint16_t       )512,/* 任务栈大小 */
-//			 (void*          )NULL, /* 任务入口函数参数 */
-//			 //void *arg,
-//			 (UBaseType_t    )4, /* 任务的优先级 */
-//			 (TaskHandle_t*  )&tcpecho_thread_handle);/* 任务控制块指针 */ 
-			 
-		sys_thread_new("tcpecho_thread", tcpecho_thread, NULL, 512, 4);
+	  /* 创建 BinarySem */
+		BinarySem_Handle = xSemaphoreCreateBinary();	 
+	
+  /* 创建Receive_Task任务 */
+		xReturn = xTaskCreate((TaskFunction_t )Receive_Task, /* 任务入口函数 */
+													(const char*    )"Receive_Task",/* 任务名字 */
+													(uint16_t       )512,   /* 任务栈大小 */
+													(void*          )NULL,	/* 任务入口函数参数 */
+													(UBaseType_t    )2,	    /* 任务的优先级 */
+													(TaskHandle_t*  )&Receive_Task_Handle);/* 任务控制块指针 */
+
 		 /* 启动任务调度 */           
 		if(pdPASS == xReturn)
 			vTaskStartScheduler();   /* 启动任务，开启调度 */
-								
+										
 }
 
 void quit_dhcp_server( void )
@@ -148,19 +153,16 @@ void quit_dhcp_server( void )
 }
 #define MAKE_IPV4_ADDRESS(a, b, c, d)          ((((uint32_t) (a)) << 24) | (((uint32_t) (b)) << 16) | (((uint32_t) (c)) << 8) | ((uint32_t) (d)))
 
-/*
-	打印地址信息
-*/
+/**
+ * @brief 打印地址信息
+ *
+ * @param temp_addr 临时地址变量
+ */
 void log_sin_addr_info(struct sockaddr_in  temp_addr)
 {
 #define LOG_SW  	//打印开关
 #if defined(LOG_SW)
 
-//		PRINTF("temp_addr.sin_addr.s_addr:%d.%d.%d.%d\n\n",  \
-//		((temp_addr.sin_addr.s_addr)&0x000000ff),       \
-//		(((temp_addr.sin_addr.s_addr)&0x0000ff00)>>8),  \
-//		(((temp_addr.sin_addr.s_addr)&0x00ff0000)>>16), \
-//		((temp_addr.sin_addr.s_addr)&0xff000000)>>24); 
 			PRINTF("%d.%d.%d.%d\n",  \
 		((temp_addr.sin_addr.s_addr)&0x000000ff),       \
 		(((temp_addr.sin_addr.s_addr)&0x0000ff00)>>8),  \
@@ -172,9 +174,15 @@ void log_sin_addr_info(struct sockaddr_in  temp_addr)
 
 
 
-/*
-	记录热点的IP
-*/
+
+/**
+ * @brief 记录热点的IP
+ *
+ * @param addr_0 IP
+ * @param addr_1 IP
+ * @param addr_2 IP
+ * @param addr_3 IP
+ */
 void recording_AP_IP(uint8_t addr_0,uint8_t addr_1,uint8_t addr_2,uint8_t addr_3)
 {
 	int i=0;
@@ -197,14 +205,13 @@ void recording_AP_IP(uint8_t addr_0,uint8_t addr_1,uint8_t addr_2,uint8_t addr_3
 #endif
 	
 }
+
 /**
- *  实现一个非常简单的DHCP服务器。
- *
- *  服务器将始终为DISCOVER命令提供下一个可用地址
- *  服务器将使不要求下一个可用地址的任何REQUEST命令无效
- *  服务器将确认用于下一个可用地址的任何请求命令，然后递增下一个可用地址
- *
- * @param my_addr : 绑定服务器端口的本地IP地址。
+ * @brief dhcp_thread
+ * 服务器将始终为DISCOVER命令提供下一个可用地址
+ * 服务器将使不要求下一个可用地址的任何REQUEST命令无效
+ * 服务器将确认用于下一个可用地址的任何请求命令，然后递增下一个可用地址
+ * @param void * thread_input 热点的IP地址
  */
 static void dhcp_thread( void * thread_input )
 {
@@ -398,24 +405,36 @@ static void dhcp_thread( void * thread_input )
 
     /* 删除 DHCP 连接 */
     lwip_close( dhcp_socket_handle );
-	PRINTF("删除 DHCP 连接\r\n");
+		
+		PRINTF("删除 DHCP 连接\r\n");
     /* 清除这个开始线程*/
     vTaskDelete( dhcp_thread_handle );
 }
-
+/**
+ * @brief Receive_Task
+ */
+static void Receive_Task(void* parameter)
+{	
+  BaseType_t xReturn = pdPASS;/* 定义一个创建信息返回值，默认为pdPASS */
+  while (1)
+  {
+    //获取二值信号量 xSemaphore,没获取到则一直等待
+		xReturn = xSemaphoreTake(BinarySem_Handle,/* 二值信号量句柄 */
+                              portMAX_DELAY); /* 等待时间 */
+    if(pdTRUE == xReturn)
+		{
+			PRINTF("收到数据:%s\r\n",recv_data);
+		}
+  }
+}
 
 /**
- *  查找指定的DHCP选项
+ * @brief 查找指定的DHCP选项
  *
- *搜索给定的DHCP请求并返回指向
- *指定的DHCP选项数据，如果找不到，则为NULL
- *
- * @param request :   DHCP请求结构
- * @param option_num : 查找哪个DHCP选项号
- *
+ * @param request DHCP请求结构
+ * @param option_num 查找哪个DHCP选项号
  * @return 指向DHCP选项数据的指针，如果找不到，则为NULL
  */
-
 static unsigned char * find_option( dhcp_header_t* request, unsigned char option_num )
 {
     unsigned char* option_ptr = (unsigned char*) request->options;

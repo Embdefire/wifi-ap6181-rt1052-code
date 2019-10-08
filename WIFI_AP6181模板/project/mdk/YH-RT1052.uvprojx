@@ -577,9 +577,9 @@
               <FilePath>..\..\user\appliance\FreeRTOS_LwIP_dhcp_server.c</FilePath>
             </File>
             <File>
-              <FileName>FreeRTOS_LwIP_dns_server.c</FileName>
+              <FileName>tcpecho.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\user\appliance\FreeRTOS_LwIP_dns_server.c</FilePath>
+              <FilePath>..\..\user\tcpecho.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2320,9 +2320,9 @@
               <FilePath>..\..\user\appliance\FreeRTOS_LwIP_dhcp_server.c</FilePath>
             </File>
             <File>
-              <FileName>FreeRTOS_LwIP_dns_server.c</FileName>
+              <FileName>tcpecho.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\user\appliance\FreeRTOS_LwIP_dns_server.c</FilePath>
+              <FilePath>..\..\user\tcpecho.c</FilePath>
             </File>
           </Files>
         </Group>

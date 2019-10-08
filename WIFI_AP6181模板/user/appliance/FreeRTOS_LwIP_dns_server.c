@@ -11,6 +11,8 @@
 #include "network/wwd_network_constants.h"
 #include "RTOS/wwd_rtos_interface.h"
 #include "wwd_assert.h"
+#include "lwip/sys.h"
+#include "tcpecho.h"
 
 /******************************************************
  *                      ∫Í∂®“Â

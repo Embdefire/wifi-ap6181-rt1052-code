@@ -44,11 +44,14 @@
 #define RECV_DATA         				(1024)
 #define LOCAL_PORT                 5001
 
+char *recv_data;
+extern SemaphoreHandle_t BinarySem_Handle;
+
 void 
 tcpecho_thread(void *arg)
 {
   int sock = -1,connected;
-  char *recv_data;
+
   struct sockaddr_in server_addr,client_addr;
   socklen_t sin_size;
   int recv_data_len;
@@ -80,7 +83,7 @@ tcpecho_thread(void *arg)
       goto __exit;
   }
   
-  if (listen(sock, 5) == -1)
+  if (listen(sock, 50) == -1)
   {
       PRINTF("Listen error\n");
       goto __exit;
@@ -107,17 +110,16 @@ tcpecho_thread(void *arg)
     while(1)
     {
       recv_data_len = recv(connected, recv_data, RECV_DATA, 0);
-      
+      xSemaphoreGive( BinarySem_Handle );//给出二值信号量
       if (recv_data_len <= 0) 
 			{
-				PRINTF("recv_data_len = %d\r\n",recv_data_len);
         break;
 			}
-				      
-      PRINTF("recv %d len data\n",recv_data_len);
-      
-      write(connected,recv_data,recv_data_len);
-      
+			write(connected,recv_data,recv_data_len);
+			
+			recv_data_len=0;
+			memset(recv_data,0,RECV_DATA);
+
     }
     if (connected >= 0) 
       closesocket(connected);
