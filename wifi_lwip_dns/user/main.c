@@ -67,16 +67,6 @@ static void BOARD_USDHCClockConfiguration(void)
  * 主函数
  */
 
-//  PRINTF("本例程演示开发板使用dns功能解析域名\n\n");
-//  
-//  PRINTF("网络连接模型如下：\n\t 电脑<--网线-->路由<--网线-->开发板\n\n");
-//  
-//  PRINTF("实验中使用TCP协议传输数据，电脑作为TCP Client ，开发板作为TCP Server\n\n");
-//  
-//  PRINTF("本例程的IP地址均在User/arch/sys_arch.h文件中修改\n\n");
-//    
-//  PRINTF("本例程未写入<<LwIP应用实战开发指南>>书中，无参考\n\n");
-
 int main( void )
 {
     gpio_pin_config_t gpio_config = {kGPIO_DigitalOutput, 0, kGPIO_NoIntmode};
