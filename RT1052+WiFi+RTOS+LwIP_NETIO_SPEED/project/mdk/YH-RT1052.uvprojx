@@ -14,7 +14,7 @@
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>MIMXRT1052DVL6B</Device>
+          <Device>MIMXRT1052CVL5B</Device>
           <Vendor>NXP</Vendor>
           <PackID>NXP.MIMXRT1052_DFP.10.0.1</PackID>
           <PackURL>http://mcuxpresso.nxp.com/cmsis_pack/repo/</PackURL>
@@ -23,7 +23,7 @@
           <StartupFile></StartupFile>
           <FlashDriverDll></FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:MIMXRT1052DVL6B$fsl_device_registers.h</RegisterFile>
+          <RegisterFile>$$Device:MIMXRT1052CVL5B$fsl_device_registers.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -33,7 +33,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:MIMXRT1052DVL6B$MIMXRT1052.xml</SFDFile>
+          <SFDFile>$$Device:MIMXRT1052CVL5B$MIMXRT1052.xml</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -340,7 +340,7 @@
 --diag_suppress=66,1296,186 
  
 </MiscControls>
-              <Define>CPU_MIMXRT1052DVL6B,SKIP_SYSCLK_INIT,PRINTF_FLOAT_ENABLE=1, SCANF_FLOAT_ENABLE=1, PRINTF_ADVANCED_ENABLE=1, SCANF_ADVANCED_ENABLE=1,FSL_RTOS_FREE_RTOS,USE_RTOS=1,WICED_DISABLE_BOOTLOADER,WWD_BUS_SDIO_USE_WLAN_SDIO_PULLUPS,NO_WICED_API,DHCP_DEBUG</Define>
+              <Define>CPU_MIMXRT1052CVL5B,SKIP_SYSCLK_INIT,PRINTF_FLOAT_ENABLE=1, SCANF_FLOAT_ENABLE=1, PRINTF_ADVANCED_ENABLE=1, SCANF_ADVANCED_ENABLE=1,FSL_RTOS_FREE_RTOS,USE_RTOS=1,WICED_DISABLE_BOOTLOADER,WWD_BUS_SDIO_USE_WLAN_SDIO_PULLUPS,NO_WICED_API,DHCP_DEBUG</Define>
               <Undefine></Undefine>
               <IncludePath>..\..\libraries\CMSIS\Include;..\..\libraries\drivers;..\..\libraries\utilities;..\..\libraries\utilities\str;..\..\libraries\utilities\log;..\..\libraries\utilities\io;..\..\libraries\xip;..\..\user;..\..\user\bsp;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\portable\RVDS\ARM_CM7\r0p1;..\..\WiFi\WICED\network\LwIP\ver2.0.3\port;..\..\WiFi\WICED\network\LwIP\ver2.0.3\src;..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include;..\..\lwip\contrib\apps;..\..\WiFi\include;..\..\WiFi\libraries\utilities\linked_list;..\..\WiFi\libraries\utilities\TLV;..\..\WiFi\resources\firmware\43362;..\..\WiFi\WICED\internal\unit;..\..\WiFi\WICED\internal;..\..\WiFi\WICED\network\LwIP\WWD;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\arch;..\..\WiFi\WICED\platform\MCU\iMXRT10xx;..\..\WiFi\WICED\platform\include;..\..\WiFi\WICED\platform\MCU\iMXRT10xx;..\..\WiFi\WICED\platform\MCU\iMXRT10xx\peripherals;..\..\WiFi\WICED\platform\MCU\iMXRT10xx\WWD;..\..\WiFi\WICED\WWD\include;..\..\WiFi\WICED\WWD\include\network;..\..\WiFi\WICED\WWD\include\platform;..\..\WiFi\WICED\WWD\include\RTOS;..\..\WiFi\WICED\WWD;..\..\WiFi\WICED\WWD\internal\bus_protocols;..\..\WiFi\WICED\WWD\internal\bus_protocols\SDIO;..\..\WiFi\WICED\WWD\internal\chips\43362;..\..\WiFi\WICED\RTOS\FreeRTOS\WWD;..\..\WiFi\WICED\WWD\internal;..\..\WiFi\WICED\platform\GCC;..\..\WiFi\WICED\security\BESL\crypto_internal;..\..\WiFi\WICED\security\BESL\mbedtls_open\include;..\..\WiFi\WICED\security\BESL\include;..\..\WiFi\WICED\RTOS\FreeRTOS\WICED;..\..\WiFi\WICED\platform\MCU;..\..\WiFi\libraries\utilities\ring_buffer;..\..\WiFi\WICED\RTOS\FreeRTOS\WWD\ARM_CM7;..\..\user\bsp\sdio\inc;..\..\user\bsp\sdio\port;..\..\WiFi\WICED\network\LwIP\WICED;..\..\WiFi\WICED\security\BESL\host\WICED;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\arch;..\..\WiFi\WICED\security\PostgreSQL\include</IncludePath>
             </VariousControls>
@@ -1743,7 +1743,7 @@
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>MIMXRT1052DVL6B</Device>
+          <Device>MIMXRT1052CVL5B</Device>
           <Vendor>NXP</Vendor>
           <PackID>NXP.MIMXRT1052_DFP.10.0.1</PackID>
           <PackURL>http://mcuxpresso.nxp.com/cmsis_pack/repo/</PackURL>
@@ -1752,7 +1752,7 @@
           <StartupFile></StartupFile>
           <FlashDriverDll></FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>$$Device:MIMXRT1052DVL6B$fsl_device_registers.h</RegisterFile>
+          <RegisterFile>$$Device:MIMXRT1052CVL5B$fsl_device_registers.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -1762,7 +1762,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:MIMXRT1052DVL6B$MIMXRT1052.xml</SFDFile>
+          <SFDFile>$$Device:MIMXRT1052CVL5B$MIMXRT1052.xml</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -2067,7 +2067,7 @@
               <MiscControls>--library_interface=armcc 
 --library_type=standardlib 
 --diag_suppress=66,1296,186,111</MiscControls>
-              <Define>CPU_MIMXRT1052DVL6B,XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE =1,XIP_BOOT_HEADER_DCD_ENABLE =1,PRINTF_FLOAT_ENABLE=1, SCANF_FLOAT_ENABLE=1, PRINTF_ADVANCED_ENABLE=1, SCANF_ADVANCED_ENABLE=1,FSL_RTOS_FREE_RTOS,USE_RTOS=1,WICED_DISABLE_BOOTLOADER</Define>
+              <Define>CPU_MIMXRT1052CVL5B,XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE =1,XIP_BOOT_HEADER_DCD_ENABLE =1,PRINTF_FLOAT_ENABLE=1, SCANF_FLOAT_ENABLE=1, PRINTF_ADVANCED_ENABLE=1, SCANF_ADVANCED_ENABLE=1,FSL_RTOS_FREE_RTOS,USE_RTOS=1,WICED_DISABLE_BOOTLOADER</Define>
               <Undefine></Undefine>
               <IncludePath>..\..\libraries\CMSIS\Include;..\..\libraries\drivers;..\..\libraries\utilities;..\..\libraries\utilities\str;..\..\libraries\utilities\log;..\..\libraries\utilities\io;..\..\libraries\xip;..\..\user;..\..\user\bsp;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\include;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source;..\..\WiFi\WICED\RTOS\FreeRTOS\ver9.0.0\Source\portable\RVDS\ARM_CM7\r0p1;..\..\WiFi\WICED\network\LwIP\ver2.0.3\port;..\..\WiFi\WICED\network\LwIP\ver2.0.3\src;..\..\WiFi\WICED\network\LwIP\ver2.0.3\src\include;..\..\lwip\contrib\apps;..\..\WiFi\include;..\..\WiFi\libraries\utilities\linked_list;..\..\WiFi\libraries\utilities\TLV;..\..\WiFi\resources\firmware\43362;..\..\WiFi\WICED\internal\unit;..\..\WiFi\WICED\internal;..\..\WiFi\WICED\network\LwIP\WWD;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\arch;..\..\WiFi\WICED\platform\MCU\iMXRT10xx;..\..\WiFi\WICED\platform\include;..\..\WiFi\WICED\platform\MCU\iMXRT10xx;..\..\WiFi\WICED\platform\MCU\iMXRT10xx\peripherals;..\..\WiFi\WICED\platform\MCU\iMXRT10xx\WWD;..\..\WiFi\WICED\WWD\include;..\..\WiFi\WICED\WWD\include\network;..\..\WiFi\WICED\WWD\include\platform;..\..\WiFi\WICED\WWD\include\RTOS;..\..\WiFi\WICED\WWD;..\..\WiFi\WICED\WWD\internal\bus_protocols;..\..\WiFi\WICED\WWD\internal\bus_protocols\SDIO;..\..\WiFi\WICED\WWD\internal\chips\43362;..\..\WiFi\WICED\RTOS\FreeRTOS\WWD;..\..\WiFi\WICED\WWD\internal;..\..\WiFi\WICED\platform\GCC;..\..\WiFi\WICED\security\BESL\crypto_internal;..\..\WiFi\WICED\security\BESL\mbedtls_open\include;..\..\WiFi\WICED\security\BESL\include;..\..\WiFi\WICED\RTOS\FreeRTOS\WICED;..\..\WiFi\WICED\platform\MCU;..\..\WiFi\libraries\utilities\ring_buffer;..\..\WiFi\WICED\RTOS\FreeRTOS\WWD\ARM_CM7;..\..\user\bsp\sdio\inc;..\..\user\bsp\sdio\port;..\..\WiFi\WICED\network\LwIP\WICED;..\..\WiFi\WICED\security\BESL\host\WICED;..\..\WiFi\WICED\network\LwIP\WWD\FreeRTOS\arch;..\..\WiFi\WICED\security\PostgreSQL\include</IncludePath>
             </VariousControls>
