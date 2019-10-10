@@ -39,6 +39,7 @@
 #include "lwip/sys.h"
 #include "lwip/api.h"
 #include "fsl_debug_console.h"
+#include "appliance.h"
 /*-----------------------------------------------------------------------------------*/
 
 #define RECV_DATA         (1024)
@@ -105,7 +106,7 @@ tcpecho_thread(void *arg)
                  (void *) &flag,  /* the cast is historical cruft */
                  sizeof(int));    /* length of option value */
     }
-    
+
     while(1)
     {
       recv_data_len = recv(connected, recv_data, RECV_DATA, 0);
@@ -114,6 +115,7 @@ tcpecho_thread(void *arg)
         break;
             
       write(connected,recv_data,recv_data_len);
+
       
     }
     if (connected >= 0) 
@@ -129,7 +131,7 @@ __exit:
 void
 tcpecho_init(void)
 {
-  sys_thread_new("tcpecho_thread", tcpecho_thread, NULL, 512, 4);
+  sys_thread_new("tcpecho_thread", tcpecho_thread, NULL, 512, 5);
 }
 /*-----------------------------------------------------------------------------------*/
 

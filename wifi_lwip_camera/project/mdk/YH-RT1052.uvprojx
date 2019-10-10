@@ -597,16 +597,6 @@
               <FilePath>..\..\user\tcpecho.c</FilePath>
             </File>
             <File>
-              <FileName>FreeRTOS_LwIP_appliance.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\user\FreeRTOS_LwIP_appliance.c</FilePath>
-            </File>
-            <File>
-              <FileName>FreeRTOS_LwIP_dhcp_server.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\user\FreeRTOS_LwIP_dhcp_server.c</FilePath>
-            </File>
-            <File>
               <FileName>bsp_key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\bsp\key\bsp_key.c</FilePath>
@@ -630,6 +620,21 @@
               <FileName>bsp_camera_show_rtos.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\bsp_camera_show_rtos.c</FilePath>
+            </File>
+            <File>
+              <FileName>wifi_base_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\wifi_base_config.c</FilePath>
+            </File>
+            <File>
+              <FileName>appliance.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\appliance.c</FilePath>
+            </File>
+            <File>
+              <FileName>core_delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\delay\core_delay.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2405,16 +2410,6 @@
               <FilePath>..\..\user\tcpecho.c</FilePath>
             </File>
             <File>
-              <FileName>FreeRTOS_LwIP_appliance.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\user\FreeRTOS_LwIP_appliance.c</FilePath>
-            </File>
-            <File>
-              <FileName>FreeRTOS_LwIP_dhcp_server.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\user\FreeRTOS_LwIP_dhcp_server.c</FilePath>
-            </File>
-            <File>
               <FileName>bsp_key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\bsp\key\bsp_key.c</FilePath>
@@ -2438,6 +2433,21 @@
               <FileName>bsp_camera_show_rtos.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\bsp_camera_show_rtos.c</FilePath>
+            </File>
+            <File>
+              <FileName>wifi_base_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\wifi_base_config.c</FilePath>
+            </File>
+            <File>
+              <FileName>appliance.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\appliance.c</FilePath>
+            </File>
+            <File>
+              <FileName>core_delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\delay\core_delay.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -18,7 +18,7 @@
 #include "bsp_ov2640.h"
 #include "bsp_ov2640_config.h"
 #include "./lcd/bsp_lcd.h" 
-#include "./key/bsp_key.h"
+#include "./key/bsp_key.h" 
 #include "fsl_debug_console.h"
 #include "string.h"
 

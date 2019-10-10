@@ -21,43 +21,32 @@ void HardFault_Handler()
   }
 }
 
+
+
 /**
  * @brief 摄像头采集
  *
  * @return 无
  *   @retval 无
  */
-int Camera_collection(void)
-//int main(void)
+void  Get_Camera_Data_Task(void)
 {
-//	//taskENTER_CRITICAL();           //进入临界区
-//	Camera_Init();
-//	//taskEXIT_CRITICAL();            //退出临界区
-	
-		/* 初始化内存保护单元 */
-//	BOARD_ConfigMPU();
-//	/* 初始化开发板引脚 */
-//	BOARD_InitPins();
-//	/* 初始化开发板时钟 */
-//	BOARD_BootClockRUN();
-//	/* 初始化调试串口 */
-//	BOARD_InitDebugConsole();
-//	/* 初始化液晶接口*/
-//	BOARD_InitLcd();
-//	/* 按键初始化 */
-//	Key_GPIO_Config();
-	Camera_Init();
+	//Camera_Init();
 	while (1)
 	{
-		CAMERA_RECEIVER_SubmitEmptyBuffer(&cameraReceiver, activeFrameAddr);
-    
-		/* 等待获取完整帧缓冲区以显示 */
-		while (kStatus_Success != CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver, &activeFrameAddr))
-		{
-		}
+
+//		CAMERA_RECEIVER_SubmitEmptyBuffer(&cameraReceiver, activeFrameAddr);
+//    
+//		/* 等待获取完整帧缓冲区以显示 */
+//		while (kStatus_Success != CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver, &activeFrameAddr))
+//		{
+//		}
 		PRINTF("帧缓冲 ok \r\n");
+		vTaskDelay(200);
 
 	}
 }
+
+
 
 

@@ -39,6 +39,7 @@
  *                    配置
  ******************************************************/
 #define AP_SSID              "embedfire_AP6181"    /* 路由名称 */
+//#define AP_SSID              "embedfire_dev"    /* 路由名称 */
 #define AP_PASS              "wildfire"         /* 路由密码 */
 #define AP_SEC               WICED_SECURITY_WPA2_MIXED_PSK  /* 路由加密 */
 
