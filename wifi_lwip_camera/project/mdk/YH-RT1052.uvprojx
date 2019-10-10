@@ -612,11 +612,6 @@
               <FilePath>..\..\user\bsp\key\bsp_key.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_systick.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\user\bsp\systick\bsp_systick.c</FilePath>
-            </File>
-            <File>
               <FileName>bsp_camera_lcd.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\bsp\lcd\bsp_camera_lcd.c</FilePath>
@@ -630,6 +625,11 @@
               <FileName>fonts.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\bsp\font\fonts.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_camera_show_rtos.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp_camera_show_rtos.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2420,11 +2420,6 @@
               <FilePath>..\..\user\bsp\key\bsp_key.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_systick.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\user\bsp\systick\bsp_systick.c</FilePath>
-            </File>
-            <File>
               <FileName>bsp_camera_lcd.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\bsp\lcd\bsp_camera_lcd.c</FilePath>
@@ -2438,6 +2433,11 @@
               <FileName>fonts.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\bsp\font\fonts.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_camera_show_rtos.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp_camera_show_rtos.c</FilePath>
             </File>
           </Files>
         </Group>

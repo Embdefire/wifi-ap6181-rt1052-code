@@ -19,6 +19,9 @@
 #include "bsp_ov2640_config.h"
 #include "./lcd/bsp_lcd.h" 
 #include "./key/bsp_key.h"
+#include "fsl_debug_console.h"
+#include "string.h"
+
 /*定义相关变量*/
 uint32_t activeFrameAddr;
 uint32_t inactiveFrameAddr;
@@ -131,6 +134,7 @@ void BOARD_InitCameraResource(void)
 		GPIO_PinInit(CAMERA_RST_GPIO, CAMERA_RST_GPIO_PIN, &pinConfig);
 }
 
+
 /**
   * @brief  配置OV2640
   * @param  None
@@ -168,8 +172,8 @@ void Camera_Init(void)
         .controlFlags = APP_CAMERA_CONTROL_FLAGS,
         .framePerSec = 30,
     };
-				
-    memset(s_frameBuffer, 0, sizeof(s_frameBuffer));
+		__IO int s_frameBuffer_len=sizeof(s_frameBuffer);
+    memset(s_frameBuffer, 0, s_frameBuffer_len);
 
     CAMERA_RECEIVER_Init(&cameraReceiver, &cameraConfig, NULL, NULL);
 

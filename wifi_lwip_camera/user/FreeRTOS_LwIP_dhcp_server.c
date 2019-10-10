@@ -81,6 +81,7 @@ static unsigned char * find_option( dhcp_header_t* request, unsigned char option
 static void dhcp_thread( void * thread_input );
 static void Receive_Task(void* parameter);
 
+
 /******************************************************
  *              变量定义
  ******************************************************/
@@ -100,6 +101,7 @@ static int              dhcp_socket_handle            = -1;
 /*任务句柄*/
 static xTaskHandle      dhcp_thread_handle;
 static xTaskHandle      Receive_Task_Handle;
+static xTaskHandle      Show_img_Handle;
 /*信号量*/
 SemaphoreHandle_t BinarySem_Handle =NULL;
 
@@ -113,6 +115,10 @@ int addr_atry_index=0;
  *              功能定义
  ******************************************************/
 extern void tcpecho_thread(void *arg);
+//extern void Show_img(void);
+//void show_img()
+//{
+//}
 /**
  * @brief start_dhcp_server
  *
@@ -143,6 +149,15 @@ void start_dhcp_server( uint32_t local_addr )
 													(void*          )NULL,	/* 任务入口函数参数 */
 													(UBaseType_t    )4,	    /* 任务的优先级 */
 													(TaskHandle_t*  )&Receive_Task_Handle);/* 任务控制块指针 */
+													
+													
+//		/* 创建Receive_Task任务 */
+//		xReturn = xTaskCreate((TaskFunction_t )Show_img, /* 任务入口函数 */
+//													(const char*    )"Show_img",/* 任务名字 */
+//													(uint16_t       )5012,   /* 任务栈大小 */
+//													(void*          )NULL,	/* 任务入口函数参数 */
+//													(UBaseType_t    )4,	    /* 任务的优先级 */
+//													(TaskHandle_t*  )&Show_img_Handle);/* 任务控制块指针 */
 
 		 /* 启动任务调度 */           
 		if(pdPASS == xReturn)
@@ -453,4 +468,6 @@ static unsigned char * find_option( dhcp_header_t* request, unsigned char option
     return NULL;
 
 }
+
+
 

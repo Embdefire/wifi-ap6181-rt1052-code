@@ -112,7 +112,8 @@ static void run_ap_server( void )
     ip4_addr_t ap_ipaddr;
     ip4_addr_t ap_netmask;
     wwd_result_t result;
-
+  
+	
     /* ≥ı ºªØWiced */
     WPRINT_APP_INFO(("Starting Wiced v" WICED_VERSION "\n"));
 

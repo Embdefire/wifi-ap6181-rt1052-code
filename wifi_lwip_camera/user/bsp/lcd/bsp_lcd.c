@@ -241,7 +241,7 @@ void LCDIF_IRQHandler(void)
 				/* 当前帧处理完成标志 */
         s_frameDone = true;
 				/* 帧计数器 */
-				s_frame_count++;
+//				s_frame_count++;
 
     }
 

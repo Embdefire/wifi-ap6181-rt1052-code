@@ -10,7 +10,7 @@ void Delay_ms(__IO uint32_t nTime);
 #define TASK_ENABLE 0
 #define NumOfTask 3
 
-extern __IO uint32_t s_frame_count ;
+//extern __IO uint32_t s_frame_count ;
 void SysTick_Delay_Us( __IO uint32_t us);
 void SysTick_Delay_Ms( __IO uint32_t ms);
 

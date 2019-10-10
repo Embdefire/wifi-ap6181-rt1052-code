@@ -365,6 +365,8 @@ void BOARD_InitPins(void) {
                                                  Pull Up / Down Config. Field: 47K Ohm Pull Up
                                                  Hyst. Enable Field: Hysteresis Enabled */																								 
 }
+
+
 void BOARD_InitCSIPins(void) {
   CLOCK_EnableClock(kCLOCK_Iomuxc);          /* iomuxc clock (iomuxc_clk_enable): 0x03u */
 

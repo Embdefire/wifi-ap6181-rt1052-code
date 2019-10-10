@@ -1410,7 +1410,7 @@ void OV2640_JPEGConfig(ImageFormat_TypeDef ImageFormat)
   uint32_t i;
 
   OV2640_Reset();
-  SysTick_Delay_Ms(200);
+//  SysTick_Delay_Ms(200);
 
   /* Initialize OV2640 */
   for(i=0; i<(sizeof(OV2640_JPEG_INIT)/2); i++)
@@ -1433,7 +1433,7 @@ void OV2640_JPEGConfig(ImageFormat_TypeDef ImageFormat)
     OV2640_WriteReg(LPI2C1,OV2640_JPEG[i][0], OV2640_JPEG[i][1]);
   }
 
-  SysTick_Delay_Ms(100);
+//  SysTick_Delay_Ms(100);
 
   switch(ImageFormat)
   {
