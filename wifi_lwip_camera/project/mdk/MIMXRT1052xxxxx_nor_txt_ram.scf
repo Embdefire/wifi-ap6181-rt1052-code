@@ -77,7 +77,7 @@
 #define m_data_size                    0x00060000
 
 #define m_ncache_start                 0x81E00000
-#define m_ncache_size                  0x00200000
+#define m_ncache_size                  0x01000000
 
 #define m_data2_start                  0x80000000
 #define m_data2_size                   0x01E00000

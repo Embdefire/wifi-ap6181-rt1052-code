@@ -1547,7 +1547,7 @@ status_t OV2640_Init(camera_device_handle_t *handle, const camera_config_t *conf
     while(1);  
   }
   OV2640_UXGAConfig(); 
-  
+  //OV2640_JPEGConfig();
   return kStatus_Success;
 }
 

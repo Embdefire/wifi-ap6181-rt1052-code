@@ -101,7 +101,7 @@ static int              dhcp_socket_handle            = -1;
 /*任务句柄*/
 static xTaskHandle      dhcp_thread_handle;
 static xTaskHandle      Receive_Task_Handle;
-static xTaskHandle      Show_img_Handle;
+static xTaskHandle      Camera_collection_Handle;
 /*信号量*/
 SemaphoreHandle_t BinarySem_Handle =NULL;
 
@@ -115,10 +115,8 @@ int addr_atry_index=0;
  *              功能定义
  ******************************************************/
 extern void tcpecho_thread(void *arg);
-//extern void Show_img(void);
-//void show_img()
-//{
-//}
+extern void Camera_collection(void);
+
 /**
  * @brief start_dhcp_server
  *
@@ -151,13 +149,13 @@ void start_dhcp_server( uint32_t local_addr )
 													(TaskHandle_t*  )&Receive_Task_Handle);/* 任务控制块指针 */
 													
 													
-//		/* 创建Receive_Task任务 */
-//		xReturn = xTaskCreate((TaskFunction_t )Show_img, /* 任务入口函数 */
-//													(const char*    )"Show_img",/* 任务名字 */
-//													(uint16_t       )5012,   /* 任务栈大小 */
-//													(void*          )NULL,	/* 任务入口函数参数 */
-//													(UBaseType_t    )4,	    /* 任务的优先级 */
-//													(TaskHandle_t*  )&Show_img_Handle);/* 任务控制块指针 */
+		/* 创建Receive_Task任务 */
+		xReturn = xTaskCreate((TaskFunction_t )Camera_collection, /* 任务入口函数 */
+													(const char*    )"Camera_collection",/* 任务名字 */
+													(uint16_t       )5012,   /* 任务栈大小 */
+													(void*          )NULL,	/* 任务入口函数参数 */
+													(UBaseType_t    )4,	    /* 任务的优先级 */
+													(TaskHandle_t*  )&Camera_collection_Handle);/* 任务控制块指针 */
 
 		 /* 启动任务调度 */           
 		if(pdPASS == xReturn)
@@ -249,10 +247,6 @@ static void dhcp_thread( void * thread_input )
 	
     memcpy( &server_ip_addr_option_buff[2], &my_addr.sin_addr.s_addr, 4 );
 
-		/*打印输出*/
-//		PRINTF("my_addr->> \n");
-//		log_sin_addr_info(my_addr);
-	
     /* 创建DHCP套接字 */
     dhcp_socket_handle = socket(AF_INET, SOCK_DGRAM, 0);
     setsockopt( dhcp_socket_handle, SOL_SOCKET, SO_RCVTIMEO, (char*)&recv_timeout, sizeof( recv_timeout ) );
@@ -266,11 +260,7 @@ static void dhcp_thread( void * thread_input )
 		
 		/*目标IP为255.255.255.255  广播地址*/
     memset( &destination_addr.sin_addr.s_addr, 0xff, 4 );
-				
-		/*打印输出*/
-//		PRINTF("destination_addr->> \n");
-//		log_sin_addr_info(destination_addr);
-
+			
     /* 无限循环 */
     while ( dhcp_quit_flag == 0 )
     {

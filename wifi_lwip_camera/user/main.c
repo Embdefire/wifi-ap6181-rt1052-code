@@ -67,6 +67,7 @@ static void BOARD_USDHCClockConfiguration(void)
  * Ö÷º¯Êý
  */
 
+//int main_test( void )
 int main( void )
 {
     gpio_pin_config_t gpio_config = {kGPIO_DigitalOutput, 0, kGPIO_NoIntmode};

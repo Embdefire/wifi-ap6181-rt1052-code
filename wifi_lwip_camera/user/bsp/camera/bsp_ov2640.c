@@ -148,20 +148,7 @@ void Camera_Init(void)
 		BOARD_InitCameraResource();
     /* 设置摄像头模式 */
 		Set_Cam_mode(1);
-	  /* 配置屏幕参数 */
-    elcdif_rgb_mode_config_t lcdConfig = {
-        .panelWidth = APP_IMG_WIDTH,		/*屏幕的面板 图像宽度	设置为 实际屏幕大小（800*480）*/
-        .panelHeight = APP_IMG_HEIGHT,	/*屏幕的面板 图像高度*/
-        .hsw = APP_HSW,
-        .hfp = APP_HFP,
-        .hbp = APP_HBP,
-        .vsw = APP_VSW,
-        .vfp = APP_VFP,
-        .vbp = APP_VBP,
-        .polarityFlags = APP_POL_FLAGS,
-        .pixelFormat = kELCDIF_PixelFormatRGB565,/*像素格式*/
-        .dataBus = APP_LCDIF_DATA_BUS,/*液晶输出位宽为16bit*/
-    };
+
     /* 配置摄像头参数 */
     const camera_config_t cameraConfig = {
         .pixelFormat = kVIDEO_PixelFormatRGB565,/*输出像素格式*/
@@ -172,8 +159,7 @@ void Camera_Init(void)
         .controlFlags = APP_CAMERA_CONTROL_FLAGS,
         .framePerSec = 30,
     };
-		__IO int s_frameBuffer_len=sizeof(s_frameBuffer);
-    memset(s_frameBuffer, 0, s_frameBuffer_len);
+    memset(s_frameBuffer, 0, sizeof(s_frameBuffer));
 
     CAMERA_RECEIVER_Init(&cameraReceiver, &cameraConfig, NULL, NULL);
 
@@ -202,14 +188,7 @@ void Camera_Init(void)
     {
     }
 
-    lcdConfig.bufferAddr = (uint32_t)activeFrameAddr;
 
-    ELCDIF_RgbModeInit(APP_ELCDIF, &lcdConfig);/*初始化液晶屏*/
-
-    ELCDIF_SetNextBufferAddr(APP_ELCDIF, LCD_SetOpenWindows_Pos(Set_Cam_mode(index_num), inactiveFrameAddr));
-    ELCDIF_RgbModeStart(APP_ELCDIF);/*启动显示*/
-	  /* 打开背光 */
-    GPIO_PinWrite(LCD_BL_GPIO, LCD_BL_GPIO_PIN, 1);
 }
 /**
   * @brief  摄像头配置选择
@@ -219,42 +198,42 @@ void Camera_Init(void)
 int index_num=1;
 void Cam_Config_Switch()
 {
-		/* 检测WAUP按键 */
-		if(Key_Scan(CORE_BOARD_WAUP_KEY_GPIO, CORE_BOARD_WAUP_KEY_GPIO_PIN) == KEY_ON )
-		{
-			index_num++;
-			if(index_num>3)
-			{
-				index_num=1;
-			}
-      /*	设置摄像头模式 */
-			Set_Cam_mode(index_num);
-      /* 配置摄像头参数 */
-			const camera_config_t cameraConfig = {
-					.pixelFormat = kVIDEO_PixelFormatRGB565,
-					.bytesPerPixel = APP_BPP,
-					.resolution = FSL_VIDEO_RESOLUTION(cam_temp_mode.cam_out_width, cam_temp_mode.cam_out_height),//视频分辨率的 宽度和高度
-					.frameBufferLinePitch_Bytes = APP_IMG_WIDTH * APP_BPP,
-					.interface = kCAMERA_InterfaceGatedClock,
-					.controlFlags = APP_CAMERA_CONTROL_FLAGS,
-					.framePerSec = 30,
-			};
-			/*	关闭摄像头配置 */
-			CAMERA_DEVICE_Stop(&cameraDevice);			
-			memset(s_frameBuffer, 0, sizeof(s_frameBuffer));
-			/* 初始化摄像头接收 */
-			CAMERA_RECEIVER_Init(&cameraReceiver, &cameraConfig, NULL, NULL);
-      /* 初始化摄像头设备 */
-			CAMERA_DEVICE_Init(&cameraDevice, &cameraConfig);
-      /* 摄像头设备开始 */
-			CAMERA_DEVICE_Start(&cameraDevice);
-			/* 将空帧缓冲区提交到缓冲区队列. */
-			for (uint32_t i = 0; i < APP_FRAME_BUFFER_COUNT; i++)
-			{
-					CAMERA_RECEIVER_SubmitEmptyBuffer(&cameraReceiver, (uint32_t)(s_frameBuffer[i]));
-			}
-			CAMERA_RECEIVER_Start(&cameraReceiver);	
-			
-			memset(s_frameBuffer, 0, sizeof(s_frameBuffer));//避免重影
-		}    
+//		/* 检测WAUP按键 */
+//		if(Key_Scan(CORE_BOARD_WAUP_KEY_GPIO, CORE_BOARD_WAUP_KEY_GPIO_PIN) == KEY_ON )
+//		{
+//			index_num++;
+//			if(index_num>3)
+//			{
+//				index_num=1;
+//			}
+//      /*	设置摄像头模式 */
+//			Set_Cam_mode(index_num);
+//      /* 配置摄像头参数 */
+//			const camera_config_t cameraConfig = {
+//					.pixelFormat = kVIDEO_PixelFormatRGB565,
+//					.bytesPerPixel = APP_BPP,
+//					.resolution = FSL_VIDEO_RESOLUTION(cam_temp_mode.cam_out_width, cam_temp_mode.cam_out_height),//视频分辨率的 宽度和高度
+//					.frameBufferLinePitch_Bytes = APP_IMG_WIDTH * APP_BPP,
+//					.interface = kCAMERA_InterfaceGatedClock,
+//					.controlFlags = APP_CAMERA_CONTROL_FLAGS,
+//					.framePerSec = 30,
+//			};
+//			/*	关闭摄像头配置 */
+//			CAMERA_DEVICE_Stop(&cameraDevice);			
+//			memset(s_frameBuffer, 0, sizeof(s_frameBuffer));
+//			/* 初始化摄像头接收 */
+//			CAMERA_RECEIVER_Init(&cameraReceiver, &cameraConfig, NULL, NULL);
+//      /* 初始化摄像头设备 */
+//			CAMERA_DEVICE_Init(&cameraDevice, &cameraConfig);
+//      /* 摄像头设备开始 */
+//			CAMERA_DEVICE_Start(&cameraDevice);
+//			/* 将空帧缓冲区提交到缓冲区队列. */
+//			for (uint32_t i = 0; i < APP_FRAME_BUFFER_COUNT; i++)
+//			{
+//					CAMERA_RECEIVER_SubmitEmptyBuffer(&cameraReceiver, (uint32_t)(s_frameBuffer[i]));
+//			}
+//			CAMERA_RECEIVER_Start(&cameraReceiver);	
+//			
+//			memset(s_frameBuffer, 0, sizeof(s_frameBuffer));//避免重影
+//		}    
 }
