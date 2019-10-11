@@ -27,8 +27,8 @@
  * 这个句柄可以为NULL。
  */
 static TaskHandle_t AppTaskCreate_Handle = NULL;/* 创建任务句柄 */
-static TaskHandle_t Test1_Task_Handle = NULL;/* LED任务句柄 */
-static TaskHandle_t Get_Camera_Data_Task_Handle = NULL;/* KEY任务句柄 */
+//static TaskHandle_t Test1_Task_Handle = NULL;/* LED任务句柄 */
+//static TaskHandle_t Get_Camera_Data_Task_Handle = NULL;/* KEY任务句柄 */
 static TaskHandle_t Receive_Task_Handle=NULL;
 
 /********************************** 内核对象句柄 *********************************/
@@ -127,21 +127,21 @@ static void AppTaskCreate(void)
 
   taskENTER_CRITICAL();           //进入临界区
  
-  /* 创建Test1_Task任务 */
-  xReturn = xTaskCreate((TaskFunction_t )Test1_Task, /* 任务入口函数 */
-                        (const char*    )"Test1_Task",/* 任务名字 */
-                        (uint16_t       )1024,   /* 任务栈大小 */
-                        (void*          )NULL,	/* 任务入口函数参数 */
-                        (UBaseType_t    )2,	    /* 任务的优先级 */
-                        (TaskHandle_t*  )&Test1_Task_Handle);/* 任务控制块指针 */
-  
-  /* 创建Test2_Task任务 */
-  xReturn = xTaskCreate((TaskFunction_t )Get_Camera_Data_Task,  /* 任务入口函数 */
-                        (const char*    )"Get_Camera_Data_Task",/* 任务名字 */
-                        (uint16_t       )1024,  /* 任务栈大小 */
-                        (void*          )NULL,/* 任务入口函数参数 */
-                        (UBaseType_t    )3, /* 任务的优先级 */
-                        (TaskHandle_t*  )&Get_Camera_Data_Task_Handle);/* 任务控制块指针 */ 
+//  /* 创建Test1_Task任务 */
+//  xReturn = xTaskCreate((TaskFunction_t )Test1_Task, /* 任务入口函数 */
+//                        (const char*    )"Test1_Task",/* 任务名字 */
+//                        (uint16_t       )1024,   /* 任务栈大小 */
+//                        (void*          )NULL,	/* 任务入口函数参数 */
+//                        (UBaseType_t    )2,	    /* 任务的优先级 */
+//                        (TaskHandle_t*  )&Test1_Task_Handle);/* 任务控制块指针 */
+//  
+//  /* 创建Test2_Task任务 */
+//  xReturn = xTaskCreate((TaskFunction_t )Get_Camera_Data_Task,  /* 任务入口函数 */
+//                        (const char*    )"Get_Camera_Data_Task",/* 任务名字 */
+//                        (uint16_t       )1024,  /* 任务栈大小 */
+//                        (void*          )NULL,/* 任务入口函数参数 */
+//                        (UBaseType_t    )10, /* 任务的优先级 */
+//                        (TaskHandle_t*  )&Get_Camera_Data_Task_Handle);/* 任务控制块指针 */ 
 
 
   /* 创建Receive_Task任务 */

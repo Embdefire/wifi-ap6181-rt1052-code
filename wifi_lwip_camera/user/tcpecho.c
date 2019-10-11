@@ -40,7 +40,16 @@
 #include "lwip/api.h"
 #include "fsl_debug_console.h"
 #include "appliance.h"
+
+#include "./lcd/bsp_camera_lcd.h"
+#include "./camera/bsp_ov2640.h"
+#include "./camera/bsp_ov2640_config.h"
+#include "./lcd/bsp_lcd.h"
+#include "./systick/bsp_systick.h"
+#include "./key/bsp_key.h"
+
 /*-----------------------------------------------------------------------------------*/
+uint32_t img_data[1000];
 
 #define RECV_DATA         (1024)
 
@@ -113,7 +122,9 @@ tcpecho_thread(void *arg)
       xSemaphoreGive( BinarySem_Handle );//给出二值信号量
       if (recv_data_len <= 0) 
         break;
-            
+      
+			CAMERA_RECEIVER_SubmitEmptyBuffer(&cameraReceiver, *img_data);
+
       write(connected,recv_data,recv_data_len);
 
       
@@ -131,7 +142,7 @@ __exit:
 void
 tcpecho_init(void)
 {
-  sys_thread_new("tcpecho_thread", tcpecho_thread, NULL, 512, 5);
+  sys_thread_new("tcpecho_thread", tcpecho_thread, NULL, 512, 8);
 }
 /*-----------------------------------------------------------------------------------*/
 

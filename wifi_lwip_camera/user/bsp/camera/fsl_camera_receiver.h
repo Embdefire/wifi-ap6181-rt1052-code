@@ -174,7 +174,7 @@ static inline status_t CAMERA_RECEIVER_SubmitEmptyBuffer(camera_receiver_handle_
 }
 
 /*!
- * @brief Get the full frame buffer from the camera receiver buffer queue.
+ * @brief   从照相机接收器缓冲队列中获取完整帧缓冲区。 
  *
  * @param handle Camera receiver handle.
  * @param buffer The empty frame buffer address.

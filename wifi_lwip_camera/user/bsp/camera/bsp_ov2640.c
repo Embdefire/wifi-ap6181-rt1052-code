@@ -175,21 +175,71 @@ void Camera_Init(void)
 
     CAMERA_RECEIVER_Start(&cameraReceiver);
 
-    /*
-     * LCDIF 有活动缓冲区和非活动缓冲区, 因此请在此处获取两个缓冲区.
-     */
-    /* 等待获取完整帧缓冲区以显示 */
-    while (kStatus_Success != CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver, &activeFrameAddr))
-    {
-    }
+//    /*
+//     * LCDIF 有活动缓冲区和非活动缓冲区, 因此请在此处获取两个缓冲区.
+//     */
+//    /* 等待获取完整帧缓冲区以显示 */
+//    while (kStatus_Success != CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver, &activeFrameAddr))
+//    {
+//    }
 
-    /* 等待获取完整帧缓冲区以显示 */
-    while (kStatus_Success != CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver, &inactiveFrameAddr))
-    {
-    }
+//    /* 等待获取完整帧缓冲区以显示 */
+//    while (kStatus_Success != CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver, &inactiveFrameAddr))
+//    {
+//    }
 
 
 }
+
+
+#include "bsp_camera_show_rtos.h"
+#define CSI_W               188          
+#define CSI_H               120 
+
+extern uint8_t image_csi1[CSI_H][CSI_W];
+extern uint8_t image_csi2[CSI_H][CSI_W];
+extern uint8_t (*user_image)[CSI_W];
+
+uint32_t fullCameraBufferAddr;    //采集完成的缓冲区地址    用户无需关心
+
+
+//uint8_t csi_get_full_buffer(csi_handle_t *handle, uint32_t *buffaddr)
+uint8_t csi_get_full_buffer()
+{
+   // if(kStatus_Success == CSI_TransferGetFullBuffer(CSI,handle,(uint32_t *)buffaddr))
+	 if(kStatus_Success == CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver,(uint32_t *)fullCameraBufferAddr))
+    {
+        return 1;//获取到采集完成的BUFFER
+    }
+    return 0;    //未采集完成
+}
+
+void csi_add_empty_buffer(csi_handle_t *handle, uint8_t *buff)
+{
+    CSI_TransferSubmitEmptyBuffer(CSI,handle,(uint32_t)buff);
+}
+
+void csi_isr(CSI_Type *base, csi_handle_t *handle, status_t status, void *userData)
+{
+
+    if(csi_get_full_buffer())
+    {
+			
+   			CAMERA_RECEIVER_SubmitEmptyBuffer(&cameraReceiver, (uint8_t )fullCameraBufferAddr);
+			
+        //csi_add_empty_buffer(&csi_handle,(uint8_t *)fullCameraBufferAddr);
+        if(fullCameraBufferAddr == (uint32_t)image_csi1[0])
+        {
+            user_image = image_csi1;//image_csi1采集完成
+        }
+        else if(fullCameraBufferAddr == (uint8_t)image_csi2[0])
+        {
+            user_image = image_csi2;//image_csi2采集完成
+        }
+        //mt9v03x_csi_finish_flag = 1;//采集完成标志位置一
+    }
+}
+
 /**
   * @brief  摄像头配置选择
   * @param  None

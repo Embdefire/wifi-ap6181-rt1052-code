@@ -67,15 +67,35 @@ extern uint32_t inactiveFrameAddr;
 extern const camera_device_operations_t ov2640_ops;
 extern void CSI_DriverIRQHandler(void);
 /* Image Sizes enumeration */
-typedef enum   
+//typedef enum   
+//{
+//  BMP_QQVGA             =   0x00,	    /* BMP Image QQVGA 160x120 Size */
+//  BMP_QVGA              =   0x01,      /* BMP Image VGA 800*480 Size */
+//  JPEG_160x120          =   0x02,	    /* JPEG Image 160x120 Size */
+//  JPEG_176x144          =   0x03,	    /* JPEG Image 176x144 Size */
+//  JPEG_320x240          =   0x04,	    /* JPEG Image 320x240 Size */
+//  JPEG_352x288          =   0x05	    /* JPEG Image 352x288 Size */
+//}ImageFormat_TypeDef;
+
+
+/* Image Sizes enumeration */
+typedef enum
 {
-  BMP_QQVGA             =   0x00,	    /* BMP Image QQVGA 160x120 Size */
-  BMP_QVGA              =   0x01,      /* BMP Image VGA 800*480 Size */
-  JPEG_160x120          =   0x02,	    /* JPEG Image 160x120 Size */
-  JPEG_176x144          =   0x03,	    /* JPEG Image 176x144 Size */
-  JPEG_320x240          =   0x04,	    /* JPEG Image 320x240 Size */
-  JPEG_352x288          =   0x05	    /* JPEG Image 352x288 Size */
+    BMP_QQVGA             =   0x00,	    /* BMP Image QQVGA 160x120 Size */
+    BMP_QVGA              =   0x01,      /* BMP Image VGA 800*480 Size */
+    JPEG_160x120          =   0x02,	    /* JPEG Image 160x120 Size */
+    JPEG_176x144          =   0x03,	    /* JPEG Image 176x144 Size */
+    JPEG_320x240          =   0x04,	    /* JPEG Image 320x240 Size */
+    JPEG_352x288          =   0x05,	    /* JPEG Image 352x288 Size */
+    JPEG_640x480          =   0x06,
+    JPEG_800x600          =   0x07,     /* JPEG Image 800x600 Size */
+    JPEG_1024x768         =   0x08     	/* JPEG Image 1024x768 Size */
 }ImageFormat_TypeDef;
+
+#define JPEG_IMAGE_FORMAT  JPEG_320x240
+//#define JPEG_IMAGE_FORMAT  JPEG_640x480
+//#define JPEG_IMAGE_FORMAT  JPEG_800x600
+//#define JPEG_IMAGE_FORMAT  JPEG_1024x768
 
 
 #define FRAME_RATE_30FPS	0 //30֡

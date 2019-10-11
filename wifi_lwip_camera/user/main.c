@@ -98,7 +98,7 @@ int main( void )
     GPIO_WritePinOutput(GPIO1, 9, 0);
     GPIO_WritePinOutput(GPIO1, 9, 1);
 		
-		Camera_Init();//摄像头初始化
+		//
     /*创建一个初始线程 */									
 		BaseType_t xReturn = pdPASS;
 		xReturn = xTaskCreate((TaskFunction_t )startup_thread,  /* 任务入口函数 */
@@ -136,7 +136,7 @@ static void startup_thread( void *arg )
     WPRINT_APP_INFO( ( "Started FreeRTOS" FreeRTOS_VERSION "\n" ) );
     WPRINT_APP_INFO( ( "Starting LwIP " LwIP_VERSION "\n" ) );
 	
-//		Camera_Init();//摄像头初始化
+		Camera_Init();//摄像头初始化
 	
     /* 创建信号量以在LwIP完成初始化时发出信号 */
     lwip_done_sema = xSemaphoreCreateCounting( 1, 0 );

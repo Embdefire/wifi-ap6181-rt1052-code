@@ -172,23 +172,26 @@ static status_t CSI_ADAPTER_GetFullBuffer(camera_receiver_handle_t *handle, uint
                                      &(((csi_private_data_t *)(handle->privateData))->csiHandle), buffer);
 }
 
+extern void csi_isr(CSI_Type *base, csi_handle_t *handle, status_t status, void *userData);
+
 static void CSI_ADAPTER_Callback(CSI_Type *base, csi_handle_t *handle, status_t status, void *userData)
 {
-    camera_receiver_handle_t *cameraReceiverHandle = (camera_receiver_handle_t *)userData;
-    csi_private_data_t *privateData = (csi_private_data_t *)(cameraReceiverHandle->privateData);
+	csi_isr(base, handle, status, userData);
+//    camera_receiver_handle_t *cameraReceiverHandle = (camera_receiver_handle_t *)userData;
+//    csi_private_data_t *privateData = (csi_private_data_t *)(cameraReceiverHandle->privateData);
 
-    if (privateData->callback)
-    {
-        if (kStatus_CSI_FrameDone == status)
-        {
-            status = kStatus_Success;
-        }
-        else
-        {
-            status = kStatus_Fail;
-        }
-        privateData->callback(cameraReceiverHandle, status, privateData->userData);
-    }
+//    if (privateData->callback)
+//    {
+//        if (kStatus_CSI_FrameDone == status)
+//        {
+//            status = kStatus_Success;
+//        }
+//        else
+//        {
+//            status = kStatus_Fail;
+//        }
+//        privateData->callback(cameraReceiverHandle, status, privateData->userData);
+//    }
 }
 
 static status_t CSI_ADAPTER_InitExt(camera_receiver_handle_t *handle,
