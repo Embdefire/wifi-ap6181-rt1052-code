@@ -54,7 +54,7 @@ extern "C" {
  *
  */
 void BOARD_InitBootPins(void);
-
+void BOARD_InitCSIPins(void);
 
 /*!
  * @brief Configures pin routing and optionally pin electrical features.

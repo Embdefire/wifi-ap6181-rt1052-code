@@ -446,6 +446,26 @@
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\fsl_usdhc.c</FilePath>
             </File>
+            <File>
+              <FileName>fsl_csi_camera_adapter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\fsl_csi_camera_adapter.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_sccb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\fsl_sccb.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_lpi2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\fsl_lpi2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_csi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\fsl_csi.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -565,6 +585,11 @@
               <FileName>tcpecho.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\tcpecho.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\systick\bsp_systick.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1730,6 +1755,21 @@
               <FileName>fsl_sdmmc_host.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\bsp\sdio\port\usdhc\freertos\fsl_sdmmc_host.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>camera</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_ov2640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\bsp_ov2640.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_ov2640_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\bsp_ov2640_config.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2174,6 +2214,26 @@
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\fsl_usdhc.c</FilePath>
             </File>
+            <File>
+              <FileName>fsl_csi_camera_adapter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\fsl_csi_camera_adapter.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_sccb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\fsl_sccb.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_lpi2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\fsl_lpi2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_csi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\fsl_csi.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2293,6 +2353,11 @@
               <FileName>tcpecho.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\tcpecho.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\systick\bsp_systick.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -3458,6 +3523,21 @@
               <FileName>fsl_sdmmc_host.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\bsp\sdio\port\usdhc\freertos\fsl_sdmmc_host.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>camera</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_ov2640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\bsp_ov2640.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_ov2640_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\bsp_ov2640_config.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -3902,6 +3982,26 @@
               <FileType>1</FileType>
               <FilePath>..\..\libraries\drivers\fsl_usdhc.c</FilePath>
             </File>
+            <File>
+              <FileName>fsl_csi_camera_adapter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\fsl_csi_camera_adapter.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_sccb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\fsl_sccb.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_lpi2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\fsl_lpi2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_csi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\drivers\fsl_csi.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -4021,6 +4121,11 @@
               <FileName>tcpecho.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\tcpecho.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\systick\bsp_systick.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -5186,6 +5291,21 @@
               <FileName>fsl_sdmmc_host.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\bsp\sdio\port\usdhc\freertos\fsl_sdmmc_host.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>camera</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_ov2640.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\bsp_ov2640.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_ov2640_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\camera\bsp_ov2640_config.c</FilePath>
             </File>
           </Files>
         </Group>
