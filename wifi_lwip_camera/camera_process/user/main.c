@@ -147,8 +147,7 @@ int main(void)
 	BOARD_BootClockRUN();
 	/* 初始化调试串口 */
 	BOARD_InitDebugConsole();
-	/* 初始化液晶接口*/
-	BOARD_InitLcd();
+
 	/* 按键初始化 */
 	Key_GPIO_Config();
 	/* 打印系统时钟 */
