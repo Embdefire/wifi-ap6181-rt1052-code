@@ -103,7 +103,7 @@ LR_m_rom_ivt m_ivt_start m_ivt_size {   ; load region size_region
 	}
 }
 
-VECTOR_RAM LR_m_text m_interrupts_start m_text_start+m_text_size-m_interrupts_size {   ; load region size_region
+LR_m_text m_interrupts_start m_text_start+m_text_size-m_interrupts_size {   ; load region size_region
   VECTOR_ROM m_interrupts_start m_interrupts_size { ; load address = execution address
     * (RESET,+FIRST)
   }
