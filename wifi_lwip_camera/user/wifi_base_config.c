@@ -1,6 +1,5 @@
 #include "wifi_base_config.h"
 
-
 extern void netio_init(void);
 ip4_addr_t ipaddr, netmask, gw;
 
@@ -9,7 +8,7 @@ ip4_addr_t ipaddr, netmask, gw;
 */
 void Config_WIFI_LwIP_Info()
 {
-    wwd_result_t result;
+     wwd_result_t result;
 
     /* 启动WICED（启动802.11设备） */
     WPRINT_APP_INFO(("Starting Wiced v" WICED_VERSION "\n"));
@@ -21,7 +20,6 @@ void Config_WIFI_LwIP_Info()
         WPRINT_APP_INFO(("Error %d while starting WICED!\n", result));
     }
 
-	      
     /*尝试加入Wi-Fi网络 */
     WPRINT_APP_INFO(("Joining : " AP_SSID "\n"));
     while ( wwd_wifi_join( &ap_ssid, AP_SEC, (uint8_t*) AP_PASS, sizeof( AP_PASS ) - 1, NULL, WWD_STA_INTERFACE ) != WWD_SUCCESS )
@@ -80,8 +78,6 @@ void Config_WIFI_LwIP_Info()
         WPRINT_APP_ERROR(("WICED de-initialization failed\n"));
     }
 #endif
-
 		
 }
-
 

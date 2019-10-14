@@ -61,7 +61,6 @@ void BOARD_InitBootPins(void);
  *
  */
 void BOARD_InitPins(void);
-void BOARD_InitCSIPins(void) ;
 
 #if defined(__cplusplus)
 }

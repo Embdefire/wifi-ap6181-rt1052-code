@@ -15,7 +15,7 @@
 
 #include "./led/bsp_led.h"
 #include "tcpecho.h"
-#include "bsp_ov2640.h"
+//#include "bsp_ov2640.h"
 
 
 

@@ -41,12 +41,12 @@
 #include "fsl_debug_console.h"
 #include "appliance.h"
 
-#include "./lcd/bsp_camera_lcd.h"
-#include "./camera/bsp_ov2640.h"
-#include "./camera/bsp_ov2640_config.h"
-#include "./lcd/bsp_lcd.h"
-#include "./systick/bsp_systick.h"
-#include "./key/bsp_key.h"
+//#include "./lcd/bsp_camera_lcd.h"
+//#include "./camera/bsp_ov2640.h"
+//#include "./camera/bsp_ov2640_config.h"
+//#include "./lcd/bsp_lcd.h"
+//#include "./systick/bsp_systick.h"
+//#include "./key/bsp_key.h"
 
 /*-----------------------------------------------------------------------------------*/
 uint32_t img_data[1000];
@@ -123,7 +123,6 @@ tcpecho_thread(void *arg)
       if (recv_data_len <= 0) 
         break;
       
-			CAMERA_RECEIVER_SubmitEmptyBuffer(&cameraReceiver, *img_data);
 
       write(connected,recv_data,recv_data_len);
 

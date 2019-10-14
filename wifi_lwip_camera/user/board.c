@@ -188,13 +188,17 @@ void BOARD_ConfigMPU(void)
     SCB_EnableDCache();
     SCB_EnableICache();
     
-    /* 启用RAM版本的中断向量表 */
+ #if defined(USE_RAM_VECTOR_TABLE)
+    /* 启用SDRAM版本的中断向量表 */
     CopyAndUseRAMVectorTable();    
+#endif
 }
 
+
+#if defined(USE_RAM_VECTOR_TABLE)
 /**
-  * @brief 把中断向量表复制一份到RAM，并使用该中断向量表
-  * @note  适用于nor_ram_code版本的程序，芯片上电后把所有代码加载至RAM中运行，
+  * @brief 把中断向量表复制一份到SDRAM，并使用该中断向量表
+  * @note  适用于nor_sdram_code版本的程序，芯片上电后把所有代码加载至SDRAM中运行，
            使用SDRAM的中断向量表后，中断产生时CPU不需要访问FLASH
   * @retval 无
   */
@@ -205,7 +209,7 @@ void CopyAndUseRAMVectorTable(void)
     /* ROM、RAM中的中断向量表基地址（MDK分散加载文件的语法） */
     extern uint32_t Image$$VECTOR_ROM$$Base[];
     extern uint32_t Image$$VECTOR_RAM$$Base[];
-    /* RAM主体代码的基地址，用于计算VECTOR_RAM占用的空间 */
+    /* SDRAM主体代码的基地址，用于计算VECTOR_RAM占用的空间 */
     extern uint32_t Image$$ER_m_ram_text$$Base[];
 
     #define __VECTOR_TABLE                Image$$VECTOR_ROM$$Base
@@ -250,5 +254,4 @@ void CopyAndUseRAMVectorTable(void)
 
 }
 
-
-
+#endif
