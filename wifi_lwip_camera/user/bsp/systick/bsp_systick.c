@@ -70,31 +70,31 @@ void Delay_ms(__IO uint32_t nTime)
   * @attention
   */
 //extern uint32_t Task_Delay[];
-void SysTick_Handler(void)
-{
-	uint8_t i;
-	for(i=0;i<NumOfTask;i++)
-	{
+//void SysTick_Handler(void)
+//{
+//	uint8_t i;
+//	for(i=0;i<NumOfTask;i++)
+//	{
 //		if(Task_Delay[i])
 //		{
 //			Task_Delay[i]--;
 //		}
-	}
-  if (TimingDelay != 0x00)
-  { 
-    TimingDelay--;
-  }
-	if(s_frame_task_count != 0)
-	{
-		s_frame_task_count--;
-	}
-	else
-	{
-		s_frame_task_count = 1000;
-		s_frame_rate = s_frame_count  ;
-		s_frame_count = 0;
-	}
-}
+//	}
+//  if (TimingDelay != 0x00)
+//  { 
+//    TimingDelay--;
+//  }
+//	if(s_frame_task_count != 0)
+//	{
+//		s_frame_task_count--;
+//	}
+//	else
+//	{
+//		s_frame_task_count = 1000;
+//		s_frame_rate = s_frame_count  ;
+//		s_frame_count = 0;
+//	}
+//}
 
 
 #if 0

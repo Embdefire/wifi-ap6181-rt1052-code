@@ -30,26 +30,12 @@
  * Code
  *******************************************************************/
 
-
-
-#define IMG_DATA_BUFFER_LEN  1
-
 #define MT9V03X_CSI_H 1
 #define MT9V03X_CSI_W 1024*1024*2
 
 uint8_t image_csi1[MT9V03X_CSI_H][MT9V03X_CSI_W];
-//uint8_t image_csi2[MT9V03X_CSI_H][MT9V03X_CSI_W];
 uint8_t (*user_image)[MT9V03X_CSI_W];
 
-//uint8_t jpeg_data[1024*1024*10];
-char jpeg_data[1024*1024*10];
-
-
-//显示帧率数据，默认不显示，需要显示时把这个宏设置为1即可
-#define FRAME_RATE_DISPLAY 0
-/*简单任务管理*/
-uint32_t Task_Delay[NumOfTask];
-extern void LCD_Test(void);
 /**
   * @brief  主函数
   * @param  无
@@ -66,39 +52,7 @@ void USART_SendData( uint16_t Data)
   PRINTF("%x",(Data & (uint16_t)0x01FF));
 }
 
-void usart_printf_jpeg(char *img_data)
-{
-	
-	int img_index=0;
-	int jpeg_head_flag=0;
-//	if((jpeg_data[img_index]==0xFF)&&(jpeg_data[img_index+1]==0xD8))
-//	{
-//			PRINTF("find jpeg head\r\n");
-//			jpeg_head_flag=1;
-//	}
-//	while(jpeg_head_flag)
-//	{
-//		PRINTF("%x \r",jpeg_data[img_index]);
-//		img_index++;
-//		if((jpeg_data[img_index]==0xFF)&&(jpeg_data[img_index+1]==0xD9))
-//		{
-//			PRINTF("index -> %d\r\n",jpeg_data[img_index]);
-//			jpeg_head_flag=0;
-//			break;
-//		}
-//		else if(img_index>3000)
-//		{
-//			jpeg_head_flag=0;
-//			break;
-//		}
-//		
-//	}
 
-PRINTF("%X  \r",10);
- USART_SendData( 10);
-	
-
-}
 uint8_t jpeg_data_ok=0;
 
 /**
