@@ -65,10 +65,10 @@
 #define m_text_size                    0x03FFDC00
 
 #define m_data_start                   0x80000000
-#define m_data_size                    0x01E00000
+#define m_data_size                    0x01C00000
 
-#define m_ncache_start                 0x81E00000
-#define m_ncache_size                  0x00200000
+#define m_ncache_start                 0x81000000
+#define m_ncache_size                  0x01000000
 
 #define m_data2_start                  0x20000000
 #define m_data2_size                   0x00020000
@@ -80,13 +80,13 @@
 #if (defined(__stack_size__))
   #define Stack_Size                   __stack_size__
 #else
-  #define Stack_Size                   0x0400
+  #define Stack_Size                   0x0800
 #endif
 
 #if (defined(__heap_size__))
   #define Heap_Size                    __heap_size__
 #else
-  #define Heap_Size                    0x0400
+  #define Heap_Size                    51200
 #endif
 
 LR_m_rom_config m_flash_config_start m_flash_config_size {   ; load region size_region
@@ -103,7 +103,7 @@ LR_m_rom_ivt m_ivt_start m_ivt_size {   ; load region size_region
 	}
 }
 
-LR_m_text m_interrupts_start m_text_start+m_text_size-m_interrupts_size {   ; load region size_region
+VECTOR_RAM LR_m_text m_interrupts_start m_text_start+m_text_size-m_interrupts_size {   ; load region size_region
   VECTOR_ROM m_interrupts_start m_interrupts_size { ; load address = execution address
     * (RESET,+FIRST)
   }
