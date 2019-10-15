@@ -114,7 +114,7 @@ void img_sed_uart()
 
 
 
-int main1(void)
+int main(void)
 {
 
 	
