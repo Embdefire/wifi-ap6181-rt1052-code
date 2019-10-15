@@ -15,9 +15,6 @@
 
 #include "./led/bsp_led.h"
 #include "tcpecho.h"
-//#include "bsp_ov2640.h"
-
-
 
 
 /**************************** 任务句柄 ********************************/
@@ -27,8 +24,7 @@
  * 这个句柄可以为NULL。
  */
 static TaskHandle_t AppTaskCreate_Handle = NULL;/* 创建任务句柄 */
-//static TaskHandle_t Test1_Task_Handle = NULL;/* LED任务句柄 */
-//static TaskHandle_t Get_Camera_Data_Task_Handle = NULL;/* KEY任务句柄 */
+
 static TaskHandle_t Receive_Task_Handle=NULL;
 
 /********************************** 内核对象句柄 *********************************/
@@ -43,7 +39,6 @@ static TaskHandle_t Receive_Task_Handle=NULL;
  * 
  */
  
-QueueHandle_t MQTT_Data_Queue =NULL;
 SemaphoreHandle_t BinarySem_Handle =NULL;
 /******************************* 全局变量声明 ************************************/
 /*
@@ -51,22 +46,12 @@ SemaphoreHandle_t BinarySem_Handle =NULL;
  */
 extern char *recv_data;
 
-/******************************* 宏定义 ************************************/
-/*
- * 当我们在写应用程序的时候，可能需要用到一些宏定义。
- */
-#define  MQTT_QUEUE_LEN    4   /* 队列的长度，最大可包含多少个消息 */
-#define  MQTT_QUEUE_SIZE   4   /* 队列中每个消息大小（字节） */
-
 /*
 *************************************************************************
 *                             函数声明
 *************************************************************************
 */
 static void AppTaskCreate(void);/* 用于创建任务 */
-
-static void Test1_Task(void* pvParameters);/* Test1_Task任务实现 */
-extern  void Get_Camera_Data_Task(void);/* Test2_Task任务实现 */
 static void Receive_Task(void* parameter);
 
 extern void TCPIP_Init(void);
@@ -114,12 +99,7 @@ void app_main( void )
   **********************************************************************/
 static void AppTaskCreate(void)
 {
-  BaseType_t xReturn = pdPASS;/* 定义一个创建信息返回值，默认为pdPASS */
- 
-  /* 创建Test_Queue */
-  MQTT_Data_Queue = xQueueCreate((UBaseType_t ) MQTT_QUEUE_LEN,/* 消息队列的长度 */
-                                 (UBaseType_t ) MQTT_QUEUE_SIZE);/* 消息的大小 */
-	
+
 	/* 创建 BinarySem */
 	BinarySem_Handle = xSemaphoreCreateBinary();	 
   
@@ -127,25 +107,9 @@ static void AppTaskCreate(void)
 
   taskENTER_CRITICAL();           //进入临界区
  
-//  /* 创建Test1_Task任务 */
-//  xReturn = xTaskCreate((TaskFunction_t )Test1_Task, /* 任务入口函数 */
-//                        (const char*    )"Test1_Task",/* 任务名字 */
-//                        (uint16_t       )1024,   /* 任务栈大小 */
-//                        (void*          )NULL,	/* 任务入口函数参数 */
-//                        (UBaseType_t    )2,	    /* 任务的优先级 */
-//                        (TaskHandle_t*  )&Test1_Task_Handle);/* 任务控制块指针 */
-//  
-//  /* 创建Test2_Task任务 */
-//  xReturn = xTaskCreate((TaskFunction_t )Get_Camera_Data_Task,  /* 任务入口函数 */
-//                        (const char*    )"Get_Camera_Data_Task",/* 任务名字 */
-//                        (uint16_t       )1024,  /* 任务栈大小 */
-//                        (void*          )NULL,/* 任务入口函数参数 */
-//                        (UBaseType_t    )10, /* 任务的优先级 */
-//                        (TaskHandle_t*  )&Get_Camera_Data_Task_Handle);/* 任务控制块指针 */ 
-
 
   /* 创建Receive_Task任务 */
-		xReturn = xTaskCreate((TaskFunction_t )Receive_Task, /* 任务入口函数 */
+		xTaskCreate((TaskFunction_t )Receive_Task, /* 任务入口函数 */
 													(const char*    )"Receive_Task",/* 任务名字 */
 													(uint16_t       )512,   /* 任务栈大小 */
 													(void*          )NULL,	/* 任务入口函数参数 */
@@ -158,23 +122,6 @@ static void AppTaskCreate(void)
   taskEXIT_CRITICAL();            //退出临界区
 }
 
-
-
-/**********************************************************************
-  * @ 函数名  ： Test1_Task
-  * @ 功能说明： Test1_Task任务主体
-  * @ 参数    ：   
-  * @ 返回值  ： 无
-  ********************************************************************/
-static void Test1_Task(void* parameter)
-{	
-	
-  while (1)
-  {
-		PRINTF("Test1_Task ing \r\n");
-    vTaskDelay(200);/* 延时1000个tick */
-  }
-}
 
 
 

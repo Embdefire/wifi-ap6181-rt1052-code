@@ -90,6 +90,14 @@ int main( void )
 
     IOMUXC_EnableMode(IOMUXC_GPR, kIOMUXC_GPR_ENET1TxClkOutputDir, true);
 	
+//		/* 相机初始化*/
+//	Camera_Init();
+
+//	while(1)
+//	{	
+//		img_sed_uart(); 
+//	}
+
     /*创建一个初始线程 */									
 		BaseType_t xReturn = pdPASS;
 		xReturn = xTaskCreate((TaskFunction_t )startup_thread,  /* 任务入口函数 */
