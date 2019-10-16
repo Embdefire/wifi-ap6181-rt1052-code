@@ -52,7 +52,9 @@ static void startup_thread( void *arg );
  ******************************************************/
 
 static TaskHandle_t  startup_thread_handle;
-
+static TaskHandle_t Receive_Task_Handle=NULL;
+SemaphoreHandle_t BinarySem_Handle =NULL;
+extern void Receive_Task(void* parameter);
 /******************************************************
  *               功能定义
  ******************************************************/
@@ -70,7 +72,7 @@ static void BOARD_USDHCClockConfiguration(void)
  * 主函数
  */
 
-int main1( void )
+int main( void )
 {
 
     /* 初始化内存管理单元 */
@@ -90,15 +92,25 @@ int main1( void )
 
     IOMUXC_EnableMode(IOMUXC_GPR, kIOMUXC_GPR_ENET1TxClkOutputDir, true);
 	
-
+//  /* 创建Receive_Task任务 */
+//		xTaskCreate((TaskFunction_t )Receive_Task, /* 任务入口函数 */
+//													(const char*    )"Receive_Task",/* 任务名字 */
+//													(uint16_t       )1024*5,   /* 任务栈大小 */
+//													(void*          )NULL,	/* 任务入口函数参数 */
+//													(UBaseType_t    )2,	    /* 任务的优先级 */
+//													(TaskHandle_t*  )&Receive_Task_Handle);/* 任务控制块指针 */
+													
+													
 	/*创建一个初始线程 */									
 		BaseType_t xReturn = pdPASS;
 		xReturn = xTaskCreate((TaskFunction_t )startup_thread,  /* 任务入口函数 */
 													(const char*    )"app_thread",/* 任务名字 */
-													(uint16_t       )APP_THREAD_STACKSIZE/sizeof( portSTACK_TYPE ),  /* 任务栈大小 */
+													(uint16_t       )1024*5,  /* 任务栈大小 */
 													(void*          )NULL,/* 任务入口函数参数 */
-													(UBaseType_t    )DEFAULT_THREAD_PRIO, /* 任务的优先级 */
+													(UBaseType_t    )1, /* 任务的优先级 */
 													(TaskHandle_t*  )&startup_thread_handle);/* 任务控制块指针 */ 
+													
+													
 		 /* 启动任务调度 */           
 		if(pdPASS == xReturn)
 			vTaskStartScheduler();   /* 启动任务，开启调度 */
@@ -147,6 +159,34 @@ static void startup_thread( void *arg )
 
     /* 清理此启动线程*/
     vTaskDelete( startup_thread_handle );
+}
+/**
+ * @brief Receive_Task
+ */
+extern char *recv_data;
+static void Receive_Task(void* parameter)
+{	
+
+	Camera_Init();
+
+	while(1)
+	{	
+		img_sed_uart(); 
+	}
+	
+//  BaseType_t xReturn = pdPASS;/* 定义一个创建信息返回值，默认为pdPASS */
+//	
+//  while (1)
+//  {
+//    //获取二值信号量 xSemaphore,没获取到则一直等待
+//		xReturn = xSemaphoreTake(BinarySem_Handle,/* 二值信号量句柄 */
+//                              portMAX_DELAY); /* 等待时间 */
+
+//    if(pdTRUE == xReturn)
+//		{
+//			PRINTF("收到数据:%s\r\n",recv_data);
+//		}
+//  }
 }
 
 

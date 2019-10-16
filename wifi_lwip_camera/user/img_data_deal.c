@@ -114,39 +114,39 @@ void img_sed_uart()
 
 
 
-int main(void)
-{
+//int main(void)
+//{
 
-	
-	/* 初始化内存保护单元 */
-	BOARD_ConfigMPU();
-	/* 初始化开发板引脚 */
-	BOARD_InitPins();
-	/* 初始化开发板时钟 */
-	BOARD_BootClockRUN();
-	/* 初始化调试串口 */
-	BOARD_InitDebugConsole();
+//	
+//	/* 初始化内存保护单元 */
+//	BOARD_ConfigMPU();
+//	/* 初始化开发板引脚 */
+//	BOARD_InitPins();
+//	/* 初始化开发板时钟 */
+//	BOARD_BootClockRUN();
+//	/* 初始化调试串口 */
+//	BOARD_InitDebugConsole();
 
 
-	/* 打印系统时钟 */
-	PRINTF("\r\n");
-	PRINTF("*****欢迎使用 野火i.MX RT1052 开发板*****\r\n");
-	PRINTF("CPU:             %d Hz\r\n", CLOCK_GetFreq(kCLOCK_CpuClk));
-	PRINTF("AHB:             %d Hz\r\n", CLOCK_GetFreq(kCLOCK_AhbClk));
-	PRINTF("SEMC:            %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SemcClk));
-	PRINTF("SYSPLL:          %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SysPllClk));
-	PRINTF("SYSPLLPFD0:      %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SysPllPfd0Clk));
-	PRINTF("SYSPLLPFD1:      %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SysPllPfd1Clk));
-	PRINTF("SYSPLLPFD2:      %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SysPllPfd2Clk));
-	PRINTF("SYSPLLPFD3:      %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SysPllPfd3Clk));
-	PRINTF("CSI RGB565 example start...\r\n");
+//	/* 打印系统时钟 */
+//	PRINTF("\r\n");
+//	PRINTF("*****欢迎使用 野火i.MX RT1052 开发板*****\r\n");
+//	PRINTF("CPU:             %d Hz\r\n", CLOCK_GetFreq(kCLOCK_CpuClk));
+//	PRINTF("AHB:             %d Hz\r\n", CLOCK_GetFreq(kCLOCK_AhbClk));
+//	PRINTF("SEMC:            %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SemcClk));
+//	PRINTF("SYSPLL:          %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SysPllClk));
+//	PRINTF("SYSPLLPFD0:      %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SysPllPfd0Clk));
+//	PRINTF("SYSPLLPFD1:      %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SysPllPfd1Clk));
+//	PRINTF("SYSPLLPFD2:      %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SysPllPfd2Clk));
+//	PRINTF("SYSPLLPFD3:      %d Hz\r\n", CLOCK_GetFreq(kCLOCK_SysPllPfd3Clk));
+//	PRINTF("CSI RGB565 example start...\r\n");
 
-	/* 相机初始化*/
-	Camera_Init();
+//	/* 相机初始化*/
+//	Camera_Init();
 
-	while(1)
-	{	
-		img_sed_uart(); 
-	}
+//	while(1)
+//	{	
+//		img_sed_uart(); 
+//	}
 
-}
+//}
