@@ -307,11 +307,6 @@
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
-          <Key>DLGUARM</Key>
-          <Name>猬恮bb/?[</Name>
-        </SetRegEntry>
-        <SetRegEntry>
-          <Number>0</Number>
           <Key>CMSIS_AGDI</Key>
           <Name>-X"Fire CMSIS-DAP" -UFS-00016422 -O1007 -S0 -C0 -P00 -N00("ARM CoreSight SW-DP") -D00(0BD11477) -L00(0) -TO65554 -TC10000000 -TT10000000 -TP20 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO15 -FD20000000 -FC8000 -FN1 -FF0Embedfire_RT1052_QSPI_R1 -FS060000000 -FL02000000</Name>
         </SetRegEntry>
@@ -320,34 +315,34 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>218</LineNumber>
+          <LineNumber>89</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>101106</Address>
+          <Address>35142</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>E:\閲庣伀鐢靛瓙\WIFI\WIFI__AP6181\base_code_rt1052\ping\WiFi\WICED\WWD\internal\wwd_management.c</Filename>
+          <Filename>E:\閲庣伀鐢靛瓙\WIFI\WIFI__AP6181\base_code_rt1052\wifi_lwip_camera\user\appliance.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\YH_RT1052\../../WiFi/WICED/WWD/internal/wwd_management.c\218</Expression>
+          <Expression>\\YH_RT1052\../../user/appliance.c\89</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>325</LineNumber>
+          <LineNumber>67</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>62958</Address>
+          <Address>48186</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>E:\閲庣伀鐢靛瓙\WIFI\WIFI__AP6181\base_code_rt1052\wifi_lwip_client\WiFi\WICED\network\LwIP\ver2.0.3\src\api\api_lib.c</Filename>
+          <Filename>E:\閲庣伀鐢靛瓙\WIFI\WIFI__AP6181\base_code_rt1052\wifi_lwip_camera\user\img_data_deal.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\YH_RT1052\../../WiFi/WICED/network/LwIP/ver2.0.3/src/api/api_lib.c\325</Expression>
+          <Expression>\\YH_RT1052\../../user/img_data_deal.c\67</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -368,9 +363,9 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>1</aLwin>
+        <aLwin>0</aLwin>
         <aCover>0</aCover>
-        <aSer1>0</aSer1>
+        <aSer1>1</aSer1>
         <aSer2>0</aSer2>
         <aPa>0</aPa>
         <viewmode>1</viewmode>

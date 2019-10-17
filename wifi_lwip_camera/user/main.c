@@ -91,7 +91,7 @@ int main( void )
     NVIC_SetPriority(USDHC2_IRQn, 5U);
 
     IOMUXC_EnableMode(IOMUXC_GPR, kIOMUXC_GPR_ENET1TxClkOutputDir, true);
-	
+		
 //  /* 创建Receive_Task任务 */
 //		xTaskCreate((TaskFunction_t )Receive_Task, /* 任务入口函数 */
 //													(const char*    )"Receive_Task",/* 任务名字 */
@@ -166,13 +166,6 @@ static void startup_thread( void *arg )
 extern char *recv_data;
 static void Receive_Task(void* parameter)
 {	
-
-	Camera_Init();
-
-	while(1)
-	{	
-		img_sed_uart(); 
-	}
 	
 //  BaseType_t xReturn = pdPASS;/* 定义一个创建信息返回值，默认为pdPASS */
 //	
