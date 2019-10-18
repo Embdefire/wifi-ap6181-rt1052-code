@@ -1988,8 +1988,8 @@ status_t OV2640_Init(camera_device_handle_t *handle, const camera_config_t *conf
   {
     return kStatus_InvalidArgument;
   }
-  resource->pullPowerDownPin(false);	//POWER ON
-  
+  //resource->pullPowerDownPin(false);	//POWER ON
+ 
   /*OV2640有两组寄存器，设置0xFF寄存器的值为0或为1时可选择使用不同组的寄存器*/
   OV2640_WriteReg(LPI2C1,OV2640_DSP_RA_DLMT, 0x01);//0xFF
   /*读取OV2640的ID*/
@@ -2036,7 +2036,7 @@ status_t OV2640_Init(camera_device_handle_t *handle, const camera_config_t *conf
 	OV2640_JPEGConfig(JPEG_160x120);//根据宏定义修改 配置的JPEG图片大小JPEG_IMAGE_FORMAT
 	
 #endif
-	
+
 	
   return kStatus_Success;
 }

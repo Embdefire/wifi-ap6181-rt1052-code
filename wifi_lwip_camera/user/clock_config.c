@@ -209,6 +209,9 @@ void BOARD_BootClockRUN(void)
     CLOCK_SetDiv(kCLOCK_PerclkDiv, 1);
     /* Set per clock source. */
     CLOCK_SetMux(kCLOCK_PerclkMux, 0);
+		
+		/*sdio*/
+		
     /* Set Usdhc1 clock source. */
     CLOCK_SetMux(kCLOCK_Usdhc1Mux, 0);
     /* Set USDHC1_PODF. */
@@ -217,6 +220,9 @@ void BOARD_BootClockRUN(void)
     CLOCK_SetMux(kCLOCK_Usdhc2Mux, 0);
     /* Set USDHC2_PODF. */
     CLOCK_SetDiv(kCLOCK_Usdhc2Div, 1);
+		
+		
+		
 #ifndef SKIP_SYSCLK_INIT
     /* Set Semc alt clock source. */
     CLOCK_SetMux(kCLOCK_SemcAltMux, 0);
@@ -231,10 +237,16 @@ void BOARD_BootClockRUN(void)
     /* Set FLEXSPI_PODF. */
     CLOCK_SetDiv(kCLOCK_FlexspiDiv, 1);
 #endif
+
+
     /* Set Csi clock source. */
-    CLOCK_SetMux(kCLOCK_CsiMux, 0);
+    CLOCK_SetMux(kCLOCK_CsiMux, 0);//选择那个时钟
     /* Set CSI_PODF. */
-    CLOCK_SetDiv(kCLOCK_CsiDiv, 1);
+    CLOCK_SetDiv(kCLOCK_CsiDiv, 1);//设置时钟分频
+		
+		
+		
+		
     /* Set Lpspi clock source. */
     CLOCK_SetMux(kCLOCK_LpspiMux, 2);
     /* Set LPSPI_PODF. */

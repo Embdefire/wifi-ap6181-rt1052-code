@@ -38,7 +38,7 @@ void send_jpeg_dev(uint8_t *img_buf,uint32_t img_buf_len)
   * @param  无
   * @retval 无
   */
-volatile uint32_t JPEG_len=0; //照片长度
+
 
 void CSI_IRQHandler(void)
 {
@@ -49,68 +49,69 @@ void CSI_IRQHandler(void)
 }
 
 
-void img_sed_uart()
-{
-	uint32_t i,jpgstart,jpglen; 
-	uint8_t *p;
-	uint8_t headok=0;	
-	if(jpeg_data_ok==0)
-			{
-							/* 开始采集图像*/
-					CAMERA_RECEIVER_Start(&cameraReceiver);
+//void img_sed_uart()
+//{
+//	uint32_t i,jpgstart,jpglen; 
+//	uint8_t *p;
+//	uint8_t headok=0;	
+//	if(jpeg_data_ok==0)
+//			{
+//							/* 开始采集图像*/
+//					CAMERA_RECEIVER_Start(&cameraReceiver);
 
-					CAMERA_RECEIVER_SubmitEmptyBuffer(&cameraReceiver, fullCameraBufferAddr);			
-					/* 等待获取完整帧缓冲区以显示 */
-					while (kStatus_Success != CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver, &fullCameraBufferAddr))
-					{
-					}
-					CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver, &fullCameraBufferAddr);
-					if(fullCameraBufferAddr == (uint32_t)image_csi1[0])
-					{
-						PRINTF("帧 ok \r\n ");
-					}
-					CAMERA_RECEIVER_Stop(&cameraReceiver);//停止采集
-			}
-			
-			if(jpeg_data_ok==1)
-			{
-					PRINTF("停止采集 获取图片中 \r\n ");
-					p=(uint8_t*)user_image[0];
-					jpglen=0;	//设置jpg文件大小为0
-					headok=0;	//清除jpg头标记
-					
-					while(1)//查找0XFF,0XD8和0XFF,0XD9,获取jpg文件大小
-					{
-						if((p[i]==0XFF)&&(p[i+1]==0XD8))//找到FF D8
-						{
-							jpgstart=i;
-							headok=1;	//标记找到jpg头(FF D8)
-							PRINTF("find jpeg head \r\n ");
-						}
-						if((p[i]==0XFF)&&(p[i+1]==0XD9)&&headok)//找到头以后,再找FF D9
-						{
-							jpglen=i-jpgstart+2;
-							
-							JPEG_len=jpglen;
-							p+=jpgstart;			//偏移到0XFF,0XD8处
-							PRINTF("find jpeg end \r\n ");
-							
-							PRINTF("start send img buf \r\n ");
-							send_jpeg_dev(p,JPEG_len);
-							//memset(*user_image,0,sizeof(*user_image));
-							PRINTF("img buf send over \r\n ");
-							//return p;
-							break;
-						}
-						i++;
-						if(i>1024*10)//限制一下 避免发生硬件错误
-						{
-							i=0;
-						}
-					}	
-			}
+//					CAMERA_RECEIVER_SubmitEmptyBuffer(&cameraReceiver, fullCameraBufferAddr);			
+//					/* 等待获取完整帧缓冲区以显示 */
+////					while (kStatus_Success != CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver, &fullCameraBufferAddr))
+////					{
+////					}
+//					CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver, &fullCameraBufferAddr);
+//					CAMERA_RECEIVER_GetFullBuffer(&cameraReceiver, &fullCameraBufferAddr);
+//					if(fullCameraBufferAddr == (uint32_t)image_csi1[0])
+//					{
+//						PRINTF("帧 ok \r\n ");
+//					}
+//					//CAMERA_RECEIVER_Stop(&cameraReceiver);//停止采集
+//			}
+//			
+//			if(jpeg_data_ok==1)
+//			{
+//					PRINTF("停止采集 获取图片中 \r\n ");
+//					p=(uint8_t*)user_image[0];
+//					jpglen=0;	//设置jpg文件大小为0
+//					headok=0;	//清除jpg头标记
+//					
+//					while(1)//查找0XFF,0XD8和0XFF,0XD9,获取jpg文件大小
+//					{
+//						if((p[i]==0XFF)&&(p[i+1]==0XD8))//找到FF D8
+//						{
+//							jpgstart=i;
+//							headok=1;	//标记找到jpg头(FF D8)
+//							PRINTF("find jpeg head \r\n ");
+//						}
+//						if((p[i]==0XFF)&&(p[i+1]==0XD9)&&headok)//找到头以后,再找FF D9
+//						{
+//							jpglen=i-jpgstart+2;
+//							
+//							JPEG_len=jpglen;
+//							p+=jpgstart;			//偏移到0XFF,0XD8处
+//							PRINTF("find jpeg end \r\n ");
+//							
+//							PRINTF("start send img buf \r\n ");
+//							send_jpeg_dev(p,JPEG_len);
+//							//memset(*user_image,0,sizeof(*user_image));
+//							PRINTF("img buf send over \r\n ");
+//							//return p;
+//							break;
+//						}
+//						i++;
+//						if(i>1024*10)//限制一下 避免发生硬件错误
+//						{
+//							i=0;
+//						}
+//					}	
+//			}
 
-}
+//}
 
 
 

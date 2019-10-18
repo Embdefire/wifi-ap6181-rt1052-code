@@ -596,6 +596,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\user\img_data_deal.c</FilePath>
             </File>
+            <File>
+              <FileName>core_delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\delay\core_delay.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2369,6 +2374,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\user\img_data_deal.c</FilePath>
             </File>
+            <File>
+              <FileName>core_delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\delay\core_delay.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -4141,6 +4151,11 @@
               <FileName>img_data_deal.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\img_data_deal.c</FilePath>
+            </File>
+            <File>
+              <FileName>core_delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\bsp\delay\core_delay.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -94,6 +94,7 @@ void BOARD_InitCameraResource(void)
     LPI2C_MasterGetDefaultConfig(&masterConfig);
 		/*设置I2C时钟为400KHz*/
     masterConfig.baudRate_Hz = 400000;
+		//masterConfig.baudRate_Hz = 50000;
     masterConfig.debugEnable = true;
     masterConfig.ignoreAck = true;
 
@@ -121,7 +122,14 @@ void BOARD_InitCameraResource(void)
     };
     GPIO_PinInit(CAMERA_PWR_GPIO, CAMERA_PWR_GPIO_PIN, &pinConfig);
 		GPIO_PinInit(CAMERA_RST_GPIO, CAMERA_RST_GPIO_PIN, &pinConfig);
+		
+		GPIO_PinWrite(CAMERA_PWR_GPIO, CAMERA_PWR_GPIO_PIN, 0);//拉低引脚
+		
+
 }
+
+
+
 
 /**
   * @brief  配置OV2640
@@ -150,7 +158,7 @@ extern uint8_t img_data_buffer[1024*1024*IMG_DATA_BUFFER_LEN];
 void Camera_Init(void) 
 {
 
-		/* 初始化摄像头引脚 */
+//		/* 初始化摄像头引脚 */
 		BOARD_InitCSIPins();
 		/* 初始化摄像头的I2C及控制引脚 */
 		BOARD_InitCameraResource();

@@ -35,9 +35,14 @@
 #include "./led/bsp_led.h" 
 #include "wifi_base_config.h"
 #include "img_data_deal.h"
-
+#include "./delay/core_delay.h"   
 
 /** @endcond */
+
+//#define FREERTOS_USE 
+
+/*宏条件编译*/
+#define SYSTEM_SW
 
 
 /*****************************************************
@@ -64,7 +69,7 @@ static void BOARD_USDHCClockConfiguration(void)
     /*将系统pll PFD2分数分频器配置为18*/
     CLOCK_InitSysPfd(kCLOCK_Pfd0, 0x12U);
     /* 配置USDHC时钟源和分频器*/
-    CLOCK_SetDiv(kCLOCK_Usdhc2Div, 0U);
+    CLOCK_SetDiv(kCLOCK_Usdhc2Div, 3U);
     CLOCK_SetMux(kCLOCK_Usdhc2Mux, 1U);
 }
 
@@ -89,9 +94,10 @@ int main( void )
     LED_GPIO_Config();
     /* 设置SDIO中断优先级 */
     NVIC_SetPriority(USDHC2_IRQn, 5U);
-
+		//Camera_Init();//摄像头初始化
     IOMUXC_EnableMode(IOMUXC_GPR, kIOMUXC_GPR_ENET1TxClkOutputDir, true);
 		
+	 CPU_TS_TmrInit();
 //  /* 创建Receive_Task任务 */
 //		xTaskCreate((TaskFunction_t )Receive_Task, /* 任务入口函数 */
 //													(const char*    )"Receive_Task",/* 任务名字 */
@@ -99,7 +105,8 @@ int main( void )
 //													(void*          )NULL,	/* 任务入口函数参数 */
 //													(UBaseType_t    )2,	    /* 任务的优先级 */
 //													(TaskHandle_t*  )&Receive_Task_Handle);/* 任务控制块指针 */
-													
+
+#if defined(SYSTEM_SW)
 													
 	/*创建一个初始线程 */									
 		BaseType_t xReturn = pdPASS;
@@ -118,6 +125,18 @@ int main( void )
 			return -1;  
     /* 除非vTaskStartScheduler中出现错误，否则永远不要到这里 */
     WPRINT_APP_ERROR(("Main() function returned - error" ));
+#else
+		uint32_t temp;
+		SemaphoreHandle_t lwip_done_sema;
+    WPRINT_APP_INFO( ( "\nPlatform " PLATFORM " initialised\n" ) );
+    WPRINT_APP_INFO( ( "Started FreeRTOS" FreeRTOS_VERSION "\n" ) );
+    WPRINT_APP_INFO( ( "Starting LwIP " LwIP_VERSION "\n" ) );
+    /*初始化LwIP，提供回调函数和回调信号量 */
+    tcpip_init( tcpip_init_done, (void*) &lwip_done_sema );
+		/* 运行主应用程序功能 */
+    app_main( );
+		
+#endif 
     return 0;
 }
 
@@ -140,6 +159,7 @@ static void startup_thread( void *arg )
     WPRINT_APP_INFO( ( "Started FreeRTOS" FreeRTOS_VERSION "\n" ) );
     WPRINT_APP_INFO( ( "Starting LwIP " LwIP_VERSION "\n" ) );
 
+#if defined(FREERTOS_USE)
     /* 创建信号量以在LwIP完成初始化时发出信号 */
     lwip_done_sema = xSemaphoreCreateCounting( 1, 0 );
     if ( lwip_done_sema == NULL )	
@@ -148,11 +168,16 @@ static void startup_thread( void *arg )
         WPRINT_APP_ERROR(("Could not create LwIP init semaphore"));
         return;
     }
+#endif
 
     /*初始化LwIP，提供回调函数和回调信号量 */
     tcpip_init( tcpip_init_done, (void*) &lwip_done_sema );
+
+#if defined(FREERTOS_USE)
     xSemaphoreTake( lwip_done_sema, portMAX_DELAY );
     vQueueDelete( lwip_done_sema );
+#endif
+
 
     /* 运行主应用程序功能 */
     app_main( );
@@ -191,7 +216,11 @@ static void Receive_Task(void* parameter)
 
 static void tcpip_init_done( void * arg )
 {
+	
+#if defined(FREERTOS_USE)
     SemaphoreHandle_t * lwip_done_sema = (SemaphoreHandle_t *) arg;
-    xSemaphoreGive( *lwip_done_sema );
+    xSemaphoreGive( *lwip_done_sema );  
+#endif
+
 }
 
